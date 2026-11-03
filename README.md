@@ -1,0 +1,2 @@
+# Solaris-Ed-Test-
+Test Hosting (HTML/CSS) - NOT MY PROJECT, ONLY TESTING FOR HOSTING
