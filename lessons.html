@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solaris Ed - Lessons & Modules</title>
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Pure CSS Sidebar Toggle Checkbox -->
+    <input type="checkbox" id="sidebar-toggle" style="display: none;">
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar">
+        <div>
+            <div class="logo-container">
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-sun"></i> Solaris <span>Ed</span>
+                </a>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="lessons.html" class="active"><i class="fa-solid fa-book-open"></i> Lessons</a></li>
+                    <li><a href="guide.html"><i class="fa-solid fa-compass"></i> Student Guide</a></li>
+                    <li><a href="gallery.html"><i class="fa-solid fa-photo-film"></i> Showcase Gallery</a></li>
+                    <li><a href="tools.html"><i class="fa-solid fa-laptop-code"></i> Software Tools</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+        
+        <!-- TOP BAR -->
+        <div class="top-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <label for="sidebar-toggle" class="menu-toggle-label" title="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">
+                    TVL-ICT Animation Portal
+                </div>
+            </div>
+        </div>
+
+        <div class="portal-banner">
+            SENIOR HIGH SCHOOL • CURRICULUM LESSONS & MODULES
+        </div>
+
+        <!-- MAIN CONTENT CONTAINER -->
+        <div class="container">
+            
+            <div class="title-divider-container">
+                <div class="yellow-divider-line"></div>
+                <div class="section-title-badge">
+                    <h2>Curriculum Scope (Lessons 1 – 7)</h2>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">
+                Foundational topics in SHS Animation: Select a lesson module below to view comprehensive topics and summaries.
+            </p>
+
+            <!-- PURE CSS LESSON WRAPPER (DEFAULT CHECKED ANG WELCOME PANEL) -->
+            <input type="radio" name="lesson-tab" id="tab-welcome" checked class="tool-radio">
+            <input type="radio" name="lesson-tab" id="tab-lesson1" class="tool-radio">
+            <input type="radio" name="lesson-tab" id="tab-lesson2" class="tool-radio">
+            <input type="radio" name="lesson-tab" id="tab-lesson3" class="tool-radio">
+            <input type="radio" name="lesson-tab" id="tab-lesson4" class="tool-radio">
+            <input type="radio" name="lesson-tab" id="tab-lesson5" class="tool-radio">
+            <input type="radio" name="lesson-tab" id="tab-lesson6" class="tool-radio">
+            <input type="radio" name="lesson-tab" id="tab-lesson7" class="tool-radio">
+
+            <!-- LESSON NAVIGATION BAR (LESSON 1 - 7 SA TAAS) -->
+            <div class="lesson-nav-bar">
+                <label for="tab-lesson1" class="lesson-nav-btn"><i class="fa-solid fa-film"></i>Lesson 1: History</label>
+                <label for="tab-lesson2" class="lesson-nav-btn"><i class="fa-solid fa-rocket"></i> Lesson 2: Production</label>
+                <label for="tab-lesson3" class="lesson-nav-btn"><i class="fa-solid fa-palette"></i> Lesson 3: Elements</label>
+                <label for="tab-lesson4" class="lesson-nav-btn"><i class="fa-solid fa-shapes"></i> Lesson 4: Principles</label>
+                <label for="tab-lesson5" class="lesson-nav-btn"><i class="fa-solid fa-file-image"></i> Lesson 5: Formats</label>
+                <label for="tab-lesson6" class="lesson-nav-btn"><i class="fa-solid fa-video"></i> Lesson 6: Framing</label>
+            </div>
+
+            <!-- LESSON CONTENT DISPLAY AREA -->
+            <div class="lesson-content-display">
+                
+                <!-- WELCOME PANEL -->
+                <div class="lesson-panel" id="panel-welcome" style="display: block;">
+                    <div class="welcome-box">
+                        <div class="welcome-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+                        <h2>Welcome to the Lessons Hub</h2>
+                        <p class="lesson-subtitle" style="max-width: 500px; margin: 0.5rem auto 1.5rem auto;">
+                            Select any lesson module above to start exploring comprehensive topics and summaries aligned with the curriculum scope.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- LESSON 1 PANEL -->
+                <div class="lesson-panel" id="panel-lesson1">
+                    
+                    <input type="radio" name="lesson1-view" id="l1-full" checked class="tool-radio">
+                    <input type="radio" name="lesson1-view" id="l1-summary" class="tool-radio">
+
+                    <div class="lesson-header-row">
+                        <div>
+                            <span class="lesson-tag">Lesson 1</span>
+                            <h2>Animation Through Ages</h2>
+                            <p class="lesson-subtitle">Pre-Digital Optical Inventions & The Four Eras of Animation</p>
+                        </div>
+                        <div class="view-toggle-container">
+                            <label for="l1-full" class="toggle-btn btn-full"><i class="fa-solid fa-file-lines"></i> Full Version</label>
+                            <label for="l1-summary" class="toggle-btn btn-summary"><i class="fa-solid fa-bolt"></i> Summarized</label>
+                        </div>
+                    </div>
+
+                    <!-- FULL VERSION CONTENT -->
+                    <div class="full-content-view">
+                        <div class="lesson-body-text">
+                            <h3>The Four Eras of Animation</h3>
+                            <p>The evolution of animation is broadly categorized into three distinct eras:</p>
+                            <ul>
+                                <li><strong>1. The Pre-Cinematic Era: (Before the 1900s) </strong> The terms refers to optical toys, shadow plays, and mechanical devices that created the illusion of movement using sequential images.</li>
+                                <li><strong>2. The Traditional (Cel) Animation Era: (1900s - 1920s) </strong> This is where <i>The Golden Age</i> (1920s - 1960s) of hand-drawn animation occurred, where artists drew frame-by-frame on transparent celluloid sheets (cel).</li>
+                                <li><strong>3. The Television Animation Era: (1960s - 1990s) </strong> As televisions became common in households, animation shifted from movie theaters to television screens.</li>
+                                <li><strong>4. The Digital Animation Era: (1990s - Present) </strong> The modern era utilizing computers, 3D modeling, CGI, and digital software pipelines.</li>
+                            </ul>
+
+                            <h3 style="margin-top: 2rem;">Examples of Pre-Digital Optical Inventions</h3>
+                            <p>Before the invention of motion picture cameras, inventors and artists created ingenious mechanical devices to trick the human eye into seeing continuous motion. Here are the primary optical inventions used during this era:</p>
+
+                            <!-- 2X2 GRID CONTAINER PARA SA 4 NA CARDS -->
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
+                                
+                                <!-- Card 1: Thaumatrope -->
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="thaumatrope.jpg" alt="Thaumatrope" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 1.1: Thaumatrope (1824)</p>
+                                    
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">The Thaumatrope</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A small disc with different pictures on each side (such as a bird and a cage). When spun quickly using attached strings, persistence of vision blends the two images into one.</p>
+                                </div>
+
+                                <!-- Card 2: Phenakistoscope -->
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="phenakistoscope.jpg" alt="Phenakistoscope" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 1.2: Phenakistoscope (1832)</p>
+                                    
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">The Phenakistoscope</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">Invented by Joseph Plateau, this spinning cardboard disc featured sequential drawings and radial slits, creating a fluid moving sequence when viewed in a mirror.</p>
+                                </div>
+
+                                <!-- Card 3: Zoetrope -->
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="zoetrope.jpg" alt="Zoetrope" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 1.3: Zoetrope (1834)</p>
+                                    
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">The Zoetrope</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A cylindrical device featuring vertical slits with sequential drawings inside. When spun, multiple viewers could watch the animated sequence simultaneously.</p>
+                                </div>
+
+                                <!-- Card 4: Flipbook -->
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="flipbook.jpg" alt="Flipbook" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 1.4: The Flipbook (1868)</p>
+                                    
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">The Flipbook</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A book with a series of images that vary gradually from page to page. When pages are flipped rapidly, the sequential images simulate motion through persistence of vision.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUMMARIZED VERSION CONTENT -->
+                    <div class="summary-content-view">
+                        <div class="summary-highlight-card">
+                            <span class="summary-badge"><i class="fa-solid fa-bolt"></i> Quick Summary</span>
+                            <ul class="summary-list">
+                                <li><strong>Three Eras of Animation:</strong> Pre-Cinematic Era (optical toys), Traditional Era (hand-drawn cel animation), and Digital Era (computer & CGI).</li>
+                                <li><strong>Pre-Cinematic Era:</strong> Focused on mechanical optical illusions before the invention of film cameras.</li>
+                                <li><strong>Thaumatrope (1824):</strong> Two-sided spinning disc blending two images into one.</li>
+                                <li><strong>Phenakistoscope (1832):</strong> Spinning slotted disc viewed in a mirror for looping motion.</li>
+                                <li><strong>Zoetrope (1834):</strong> Cylindrical drum with slits allowing multiple viewers to see animations.</li>
+                                <li><strong>Flipbook (1868):</strong> Book of sequential images flipped rapidly to simulate motion.</li>
+                                <li><strong>Emile Cohl:</strong> Father of Animated Cartoons.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- LESSON 2 PANEL -->
+                <div class="lesson-panel" id="panel-lesson2">
+                    <span class="lesson-tag">Lesson 2</span>
+                    <h2>Launch Animation Studio</h2>
+                    <p class="lesson-subtitle">Production Pipeline & Roles</p>
+                    <div class="lesson-body-text" style="margin-top: 1.5rem;">
+                        <h3>Production Pipeline & Key Roles</h3>
+                        <p>Learn how an animation studio operates. Understand the three main phases of animation production (Pre-Production, Production, and Post-Production) along with key studio roles such as Director, Storyboard Artist, Key Animator, In-betweener, Cleanup Artist, and Compositor.</p>
+                    </div>
+                </div>
+
+                <!-- LESSON 3 PANEL -->
+                <div class="lesson-panel" id="panel-lesson3">
+                    <span class="lesson-tag">Lesson 3</span>
+                    <h2>7 Visual Elements</h2>
+                    <p class="lesson-subtitle">Line, Shape, Form, Color, Space</p>
+                    <div class="lesson-body-text" style="margin-top: 1.5rem;">
+                        <h3>Building Blocks of Art and Animation</h3>
+                        <p>Explore the fundamental visual elements essential for layout design and character creation: Line, Shape, Form, Color, Space, Texture, and Value.</p>
+                    </div>
+                </div>
+
+                <!-- LESSON 4 PANEL -->
+                <div class="lesson-panel" id="panel-lesson4">
+                    <span class="lesson-tag">Lesson 4</span>
+                    <h2>7 Principles of Design</h2>
+                    <p class="lesson-subtitle">Balance, Contrast, Movement</p>
+                    <div class="lesson-body-text" style="margin-top: 1.5rem;">
+                        <h3>Creating Balanced Visuals</h3>
+                        <p>Master how to arrange visual elements effectively using key principles such as Balance, Contrast, Movement, Emphasis, Pattern, Rhythm, and Unity to guide the viewer's focal point.</p>
+                    </div>
+                </div>
+
+                <!-- LESSON 5 PANEL -->
+                <div class="lesson-panel" id="panel-lesson5">
+                    <span class="lesson-tag">Lesson 5</span>
+                    <h2>Image File Formats</h2>
+                    <p class="lesson-subtitle">Raster vs Vector Assets</p>
+                    <div class="lesson-body-text" style="margin-top: 1.5rem;">
+                        <h3>Raster vs. Vector Graphics</h3>
+                        <p>Compare pixel-based raster graphics (PNG, JPG, PSD) and resolution-independent vector graphics (SVG, AI). Learn how to optimize graphic assets for digital animation pipelines.</p>
+                    </div>
+                </div>
+
+                <!-- LESSON 6 PANEL -->
+                <div class="lesson-panel" id="panel-lesson6">
+                    <span class="lesson-tag">Lesson 6</span>
+                    <h2>Camera Shots & Angles</h2>
+                    <p class="lesson-subtitle">Cinematic Framing & Storytelling</p>
+                    <div class="lesson-body-text" style="margin-top: 1.5rem;">
+                        <h3>Visual Storytelling & Framing</h3>
+                        <p>Understand camera angles (High Angle, Low Angle, Eye-Level, Bird's Eye View) and shot types (Extreme Close-Up, Close-Up, Medium Shot, Wide Shot) to build dynamic storyboards and cinematic scenes.</p>
+                    </div>
+                </div>
+
+                <!-- LESSON 7 PANEL -->
+                <div class="lesson-panel" id="panel-lesson7">
+                    <span class="lesson-tag">Lesson 7</span>
+                    <h2>12 Principles</h2>
+                    <p class="lesson-subtitle">Squash & Stretch, Anticipation</p>
+                    <div class="lesson-body-text" style="margin-top: 1.5rem;">
+                        <h3>The 12 Principles of Animation</h3>
+                        <p>Study the classic principles of animation popularized by Disney animators: Squash & Stretch, Anticipation, Staging, Straight Ahead Action & Pose to Pose, Follow Through & Overlapping Action, Slow In & Slow Out, Arcs, Secondary Action, Timing, Exaggeration, Solid Drawing, and Appeal.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p><strong>Solaris Ed - Senior High School Animation Learning Portal</strong></p>
+            <p>Educational Purpose Only | Independent Student Project &copy; 2026</p>
+        </footer>
+
+    </div>
+</body>
+</html>

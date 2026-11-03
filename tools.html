@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solaris Ed - Software Tools</title>
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Pure CSS Sidebar Toggle Checkbox -->
+    <input type="checkbox" id="sidebar-toggle" style="display: none;">
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar">
+        <div>
+            <div class="logo-container">
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-sun"></i> Solaris <span>Ed</span>
+                </a>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="lessons.html"><i class="fa-solid fa-book-open"></i> Lessons</a></li>
+                    <li><a href="guide.html"><i class="fa-solid fa-compass"></i> Student Guide</a></li>
+                    <li><a href="gallery.html"><i class="fa-solid fa-photo-film"></i> Showcase Gallery</a></li>
+                    <li><a href="tools.html" class="active"><i class="fa-solid fa-laptop-code"></i> Software Tools</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+        
+        <!-- TOP BAR -->
+        <div class="top-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <label for="sidebar-toggle" class="menu-toggle-label" title="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">
+                    TVL-ICT Animation Portal
+                </div>
+            </div>
+        </div>
+
+        <div class="portal-banner">
+            SENIOR HIGH SCHOOL • CATEGORIZED SOFTWARE & MOBILE APPS HUB
+        </div>
+
+        <!-- MAIN CONTENT CONTAINER -->
+        <div class="container">
+            
+            <div class="title-divider-container">
+                <div class="yellow-divider-line"></div>
+                <div class="section-title-badge">
+                    <h2>Software Tools Categories</h2>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">
+                Select a category on the right to view the recommended software on the left.
+            </p>
+
+            <!-- PURE CSS WRAPPER -->
+            <div>
+                <input type="radio" name="tool-category" id="cat-default" checked class="tool-radio">
+                <input type="radio" name="tool-category" id="cat-pc" class="tool-radio">
+                <input type="radio" name="tool-category" id="cat-mobile" class="tool-radio">
+
+                <div class="tools-layout">
+                    
+                    <!-- LEFT: Software Tools / Recommendation Panels -->
+                    <div class="tools-content-display">
+                        
+                        <!-- 0. DEFAULT WELCOME PROMPT PANEL -->
+                        <div class="category-detail-panel" id="panel-default" style="text-align: center; padding: 3.5rem 2rem;">
+                            <i class="fa-solid fa-hand-pointer" style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem; opacity: 0.8;"></i>
+                            <h2 style="margin-bottom: 0.5rem; font-size: 1.3rem;">Welcome, Animation Student!</h2>
+                            <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 400px; margin: 0 auto;">
+                                Click to view recommended software tools for devices.
+                            </p>
+                        </div>
+
+                        <!-- 1. PC / LAPTOP CONTENT PANEL -->
+                        <div class="category-detail-panel" id="panel-pc">
+                            <span class="lesson-tag">Category: PC / Laptop</span>
+                            <h2>Recommended PC & Laptop Software</h2>
+                            <p class="lesson-subtitle" style="margin-bottom: 1.5rem;">Essential tools for laboratory production and in-depth animation projects.</p>
+                            
+                            <!-- Sub-tool 1 -->
+                            <div class="sub-tool-card">
+                                <div class="sub-tool-info">
+                                    <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-pen-nib"></i> Krita / FireAlpaca</h3>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem;">Type: Raster / 2D Frame-by-Frame</p>
+                                    <p style="font-size: 0.85rem;">Free digital painting software featuring a complete timeline for traditional frame-by-frame animation.</p>
+                                </div>
+                                <a href="https://krita.org" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+
+                            <!-- Sub-tool 2 -->
+                            <div class="sub-tool-card">
+                                <div class="sub-tool-info">
+                                    <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-cube"></i> Blender</h3>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem;">Type: 3D Pipeline Suite</p>
+                                    <p style="font-size: 0.85rem;">Complete suite for 3D modeling, rigging, rendering, physics simulation, and 2D Grease Pencil.</p>
+                                </div>
+                                <a href="https://www.blender.org" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+
+                            <!-- Sub-tool 3 -->
+                            <div class="sub-tool-card">
+                                <div class="sub-tool-info">
+                                    <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-vector-square"></i> Inkscape / Illustrator</h3>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem;">Type: Vector Graphics Editor</p>
+                                    <p style="font-size: 0.85rem;">Used for creating high-quality, scalable character assets and background layouts.</p>
+                                </div>
+                                <a href="https://inkscape.org" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+
+                            <!-- Sub-tool 4 -->
+                            <div class="sub-tool-card">
+                                <div class="sub-tool-info">
+                                    <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-clapperboard"></i> Adobe Animate</h3>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem;">Type: 2D Professional Animation</p>
+                                    <p style="font-size: 0.85rem;">Industry standard for vector puppet rigging, motion tweening, and interactive web animation.</p>
+                                </div>
+                                <a href="https://www.adobe.com/products/animate.html" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- 2. MOBILE / CELLPHONE CONTENT PANEL -->
+                        <div class="category-detail-panel" id="panel-mobile">
+                            <span class="lesson-tag">Category: Mobile / Cellphone</span>
+                            <h2>Recommended Mobile Animation Apps</h2>
+                            <p class="lesson-subtitle" style="margin-bottom: 1.5rem;">Recommended applications for smartphones and tablets.</p>
+                            
+                            <!-- Sub-tool 1 -->
+                            <div class="sub-tool-card">
+                                <div class="sub-tool-info">
+                                    <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-film"></i> FlipaClip</h3>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem;">Type: Frame-by-Frame Mobile App</p>
+                                    <p style="font-size: 0.85rem;">Popular app for sketching frame-by-frame using touch screens and onion skin features.</p>
+                                </div>
+                                <a href="https://flipaclip.com" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+
+                            <!-- Sub-tool 2 -->
+                            <div class="sub-tool-card">
+                                <div class="sub-tool-info">
+                                    <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-wand-magic-sparkles"></i> Alight Motion</h3>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem;">Type: Motion Graphics & Keyframing</p>
+                                    <p style="font-size: 0.85rem;">Empowers mobile users to apply professional-grade keyframing, motion graphics, and visual effects.</p>
+                                </div>
+                                <a href="https://alightcreative.com/motion" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+
+                            <!-- Sub-tool 3 -->
+                            <div class="sub-tool-card">
+                                <div class="sub-tool-info">
+                                    <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-pencil"></i> RoughAnimator</h3>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem;">Type: Hand-Drawn Sketching App</p>
+                                    <p style="font-size: 0.85rem;">Designed specifically for traditional hand-drawn frame-by-frame animation on mobile devices.</p>
+                                </div>
+                                <a href="https://roughanimator.com" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+
+                            <!-- Sub-tool 4 -->
+                            <div class="sub-tool-card">
+                                <div class="sub-tool-info">
+                                    <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-paintbrush"></i> Ibis Paint X</h3>
+                                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem;">Type: Digital Painting & Animation</p>
+                                    <p style="font-size: 0.85rem;">Renowned digital painting app featuring built-in basic animation frame tools.</p>
+                                </div>
+                                <a href="https://ibispaint.com" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT: Category Buttons Sidebar -->
+                    <div class="tools-sidebar">
+                        <label for="cat-pc" class="category-label" id="label-pc">
+                            <i class="fa-solid fa-laptop" style="font-size: 1.8rem; color: var(--secondary);"></i>
+                            <div>
+                                <div style="font-weight: 600; font-size: 1.1rem;">PC / Laptop Software</div>
+                                <div style="font-size: 0.85rem; color: var(--text-muted);">For Laboratories & Pro Production</div>
+                            </div>
+                        </label>
+
+                        <label for="cat-mobile" class="category-label" id="label-mobile">
+                            <i class="fa-solid fa-mobile-screen-button" style="font-size: 1.8rem; color: var(--secondary);"></i>
+                            <div>
+                                <div style="font-weight: 600; font-size: 1.1rem;">Mobile / Cellphone Apps</div>
+                                <div style="font-size: 0.85rem; color: var(--text-muted);">For Portable & On-The-Go Animation</div>
+                            </div>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p><strong>Solaris Ed - Senior High School Animation Learning Portal</strong></p>
+            <p>Educational Purpose Only | Independent Student Project &copy; 2026</p>
+        </footer>
+
+    </div>
+</body>
+</html>

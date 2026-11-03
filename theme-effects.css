@@ -1,0 +1,129 @@
+/* ==========================================================
+   THEME SWITCH & CONTAINER/TEXT EFFECTS CSS
+   ========================================================== */
+
+:root {
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-muted: #94a3b8;
+    --secondary: #f59e0b;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* THEME SWITCH STYLES */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    user-select: none;
+    cursor: pointer;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #334155;
+    transition: background-color 0.4s ease;
+    border-radius: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+}
+
+/* ANG BILOG NA GAGALAW (SLIDER THUMB) */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #ffffff;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.slider .fa-sun {
+    color: #f59e0b;
+    font-size: 12px;
+}
+
+.slider .fa-moon {
+    color: #cbd5e1;
+    font-size: 12px;
+}
+
+/* KAPAG NAKA-ON ANG SWITCH */
+#theme-toggle:checked + .theme-switch-wrapper .slider {
+    background-color: #3b82f6;
+}
+
+#theme-toggle:checked + .theme-switch-wrapper .slider:before {
+    transform: translateX(24px);
+}
+
+/* ==========================================================
+   LIGHT MODE: CONTAINER, SECTIONS, CARDS, AT FONT COLORS
+   ========================================================== */
+
+/* 1. Container Background at Border */
+#theme-toggle:checked ~ .main-wrapper .container {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+}
+
+/* 2. Sections, Cards, at Curriculum List Backgrounds */
+#theme-toggle:checked ~ .main-wrapper .card,
+#theme-toggle:checked ~ .main-wrapper .lessons-preview,
+#theme-toggle:checked ~ .main-wrapper .curriculum-item {
+    background-color: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+/* 3. Section Badges at Titles */
+#theme-toggle:checked ~ .main-wrapper .section-title-badge h2,
+#theme-toggle:checked ~ .main-wrapper .lessons-preview h2,
+#theme-toggle:checked ~ .main-wrapper .card h3,
+#theme-toggle:checked ~ .main-wrapper .curriculum-title {
+    color: #0f172a !important;
+}
+
+/* 4. Text Font Colors & Descriptions sa loob ng Container */
+#theme-toggle:checked ~ .main-wrapper .container p,
+#theme-toggle:checked ~ .main-wrapper .container span,
+#theme-toggle:checked ~ .main-wrapper .card p,
+#theme-toggle:checked ~ .main-wrapper .curriculum-desc {
+    color: #475569 !important; /* Darker grayish tone para madaling basahin sa light background */
+}
