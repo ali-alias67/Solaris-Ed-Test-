@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="C:/Users/63907/3D Objects/Website Animation/Images/solaris_logo.png" rel="shortcut icon">
     <title>About Us - Solaris Ed Animation Portal</title>
-    <!-- Font Awesome Icons CDN -->
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Pure CSS Sidebar Toggle Checkbox -->
     <input type="checkbox" id="sidebar-toggle" style="display: none;">
 
-    <!-- SIDEBAR NAVIGATION -->
     <aside class="sidebar">
         <div>
             <div class="logo-container">
@@ -25,6 +23,7 @@
                 <ul>
                     <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a href="lessons.html"><i class="fa-solid fa-book-open"></i> Lessons</a></li>
+                    <li><a href="Quiz.html"><i class="fa-solid fa-brain"></i> Quiz & Assessment</a></li>
                     <li><a href="guide.html"><i class="fa-solid fa-compass"></i> Student Guide</a></li>
                     <li><a href="gallery.html"><i class="fa-solid fa-photo-film"></i> Showcase Gallery</a></li>
                     <li><a href="tools.html"><i class="fa-solid fa-laptop-code"></i> Software Tools</a></li>
@@ -32,12 +31,23 @@
                 </ul>
             </nav>
         </div>
+
+        <div class="sidebar-footer" style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+            <input type="checkbox" id="theme-toggle" style="display: none;" onchange="saveThemePreference()">
+            <label for="theme-toggle" class="theme-switch-wrapper">
+                <div class="theme-switch">
+                    <div class="slider">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+                <span class="theme-label-text">Dark Mode</span>
+            </label>
+        </div>
     </aside>
 
-    <!-- MAIN WRAPPER -->
     <div class="main-wrapper">
         
-        <!-- TOP BAR (Hamburger Menu) -->
         <div class="top-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem;">
             <div style="display: flex; align-items: center; gap: 1rem;">
                 <label for="sidebar-toggle" class="menu-toggle-label" title="Toggle Navigation">
@@ -50,12 +60,11 @@
                 </div>
             </div>
         </div>
-        <!-- Top Portal Banner -->
+
         <div class="portal-banner">
             SENIOR HIGH SCHOOL • ANIMATION LEARNING PORTAL
         </div>
 
-        <!-- Header Section -->
         <section class="hero" style="padding: 2.5rem 1.5rem;">
             <div class="hero-content">
                 <h1>About Solaris Ed</h1>
@@ -63,7 +72,6 @@
             </div>
         </section>
 
-        <!-- About Content -->
         <div class="container">
             
             <div class="title-divider-container" style="margin-top: 1rem; margin-bottom: 2rem;">
@@ -75,17 +83,22 @@
             
             <div class="grid">
                 <div class="card">
-                    <h3><i class="fa-solid fa-bullseye" style="color: var(--secondary); margin-right: 6px;"></i> Educational Purpose</h3>
+                    <h3><i class="fa-solid fa-book" style="color: var(--secondary); margin-right: 6px;"></i> Educational Purpose</h3>
                     <p>Solaris Ed was developed as a Senior High School Performance Task project. It serves as an independent interactive teaching and learning supplementary material for students and educators in TVL-ICT Animation.</p>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fa-solid fa-bullseye" style="color: var(--secondary); margin-right: 6px;"></i> Objectives</h3>
+                    <p>The Portal focuses on mastering the core animation concepts, encouraging it to apply through practical exercises and quizzes to test their knowledge. Additionally, students will learn to properly utilize industry-standard software tools and successfully produce, prepare, and export simple 2D or 3D animated clips.</p>
                 </div>
 
                 <div class="card">
                     <h3><i class="fa-solid fa-users" style="color: var(--secondary); margin-right: 6px;"></i> Target Audience</h3>
                     <p>Designed specifically for Senior High School learners and teachers, offering clear, structured, and student-friendly summaries of fundamental animation principles, digital asset management, and visual storytelling.</p>
                 </div>
+               
             </div>
 
-            <!-- Team & Developer Details -->
             <div class="lessons-preview" style="margin-top: 1rem;">
                 <h2 style="font-size: 1.3rem; margin-bottom: 1rem;"><i class="fa-solid fa-folder-open" style="color: var(--secondary); margin-right: 6px;"></i> Project Details</h2>
                 
@@ -96,32 +109,31 @@
                     </tr>
                     <tr style="border-bottom: 1px solid var(--card-border);">
                         <td style="padding: 0.75rem 0; font-weight: bold; color: var(--secondary);">Level:</td>
-                        <td style="padding: 0.75rem 0; color: var(--text-white);">Senior High School (Grade 11/12)</td>
+                        <td style="padding: 0.75rem 0; color: var(--text-white);">Senior High School (Grade 12)</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--card-border);">
                         <td style="padding: 0.75rem 0; font-weight: bold; color: var(--secondary);">Development Team:</td>
-                        <td style="padding: 0.75rem 0; color: var(--text-white);">[Insert Your Name / Team Members Here]</td>
+                        <td style="padding: 0.75rem 0; color: var(--text-white);">Group 1 - ICT Gates</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--card-border);">
-                        <td style="padding: 0.75rem 0; font-weight: bold; color: var(--secondary);">School / Section:</td>
-                        <td style="padding: 0.75rem 0; color: var(--text-white);">[Insert Your School Name / Track & Section]</td>
+                        <td style="padding: 0.75rem 0; font-weight: bold; color: var(--secondary);">School:</td>
+                        <td style="padding: 0.75rem 0; color: var(--text-white);">Systems Plus Computer College - Caloocan</td>
                     </tr>
                     <tr>
                         <td style="padding: 0.75rem 0; font-weight: bold; color: var(--secondary);">Submitted To:</td>
-                        <td style="padding: 0.75rem 0; color: var(--text-white);">[Insert Teacher's Name]</td>
+                        <td style="padding: 0.75rem 0; color: var(--text-white);">Mr. Christian Joel B. Empino</td>
                     </tr>
                 </table>
             </div>
 
         </div>
 
-        <!-- Footer -->
         <footer>
             <p><strong>Solaris Ed - Senior High School Animation Learning Portal</strong></p>
             <p>Educational Purpose Only | Independent Student Project &copy; 2026</p>
         </footer>
 
     </div>
-
+   	<script src="js/theme_mode.js"></script>
 </body>
 </html>

@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="C:/Users/63907/3D Objects/Website Animation/Images/solaris_logo.png" rel="shortcut icon">
     <title>Solaris Ed - Animation Learning Portal</title>
-    <!-- Font Awesome Icons CDN -->
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Pure CSS Sidebar Toggle Checkbox -->
     <input type="checkbox" id="sidebar-toggle" style="display: none;">
 
-    <!-- SIDEBAR NAVIGATION SA KALIWA -->
     <aside class="sidebar">
         <div>
             <div class="logo-container">
@@ -25,7 +23,7 @@
                 <ul>
                     <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a href="lessons.html"><i class="fa-solid fa-book-open"></i> Lessons</a></li>
-                    <li><a href="Quiz.html"><i class= "fa-solid fa-brain"></i> Quiz & Assessment</a></li>
+                    <li><a href="Quiz.html"><i class="fa-solid fa-brain"></i> Quiz & Assessment</a></li>
                     <li><a href="guide.html"><i class="fa-solid fa-compass"></i> Student Guide</a></li>
                     <li><a href="gallery.html"><i class="fa-solid fa-photo-film"></i> Showcase Gallery</a></li>
                     <li><a href="tools.html"><i class="fa-solid fa-laptop-code"></i> Software Tools</a></li>
@@ -33,12 +31,24 @@
                 </ul>
             </nav>
         </div>
+
+        <div class="sidebar-footer" style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+            <input type="checkbox" id="theme-toggle" style="display: none;" onchange="saveThemePreference()">
+            
+            <label for="theme-toggle" class="theme-switch-wrapper">
+                <div class="theme-switch">
+                    <div class="slider">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+                <span class="theme-label-text">Dark Mode</span>
+            </label>
+        </div>
     </aside>
 
-    <!-- MAIN WRAPPER -->
     <div class="main-wrapper">
         
-        <!-- TOP BAR -->
         <div class="top-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem;">
             <div style="display: flex; align-items: center; gap: 1rem;">
                 <label for="sidebar-toggle" class="menu-toggle-label" title="Toggle Navigation">
@@ -52,17 +62,14 @@
             </div>
         </div>
 
-        <!-- Top Portal Banner -->
         <div class="portal-banner">
             SENIOR HIGH SCHOOL • ANIMATION LEARNING PORTAL
         </div>
 
-        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
                 <h1>Solaris Ed Learning Portal</h1>
-                <p>Welcome educators and learners! Solaris Ed is an independent interactive learning portal designed to guide Senior High School TVL-ICT Animation students.</p>
-                
+                <p>Welcome educators and learners! Solaris Ed is an interactive learning portal designed to guide the user throughout the subject Animation.</p>
                 <div class="hero-buttons">
                     <a href="lessons.html" class="btn-primary"><i class="fa-solid fa-book-open"></i> Explore Lessons</a>
                     <a href="guide.html" class="btn-secondary"><i class="fa-solid fa-compass"></i> Student Guide</a>
@@ -70,7 +77,6 @@
             </div>
         </section>
 
-        <!-- Main Content Area -->
         <div class="container">
             
             <div class="title-divider-container">
@@ -93,14 +99,13 @@
                 </div>
                 <div class="card">
                     <h3>Foundations</h3>
-                    <p>Know more about the website, behind the developers, and it's goals.</p>
+                    <p>Know more about the website, behind the developers, and its goals.</p>
                     <a href="about.html" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- CURRICULUM SCOPE SECTION (FULL WIDTH) -->
             <div class="lessons-preview" style="max-width: 100% !important; margin: 2rem 0 !important;">
-                <h2 style="font-size: 1.3rem; margin-bottom: 0.25rem;">Curriculum Scope (Lessons 1 – 7)</h2>
+                <h2 style="font-size: 1.3rem; margin-bottom: 0.25rem;">Curriculum Scope (Lessons 1 – 6)</h2>
                 <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Foundational topics in SHS Animation:</p>
                 
                 <ul class="curriculum-list">
@@ -176,59 +181,38 @@
                             <span class="curriculum-badge">Learn</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="lessons.html" class="curriculum-item">
-                            <div class="curriculum-left">
-                                <i class="fa-solid fa-wand-magic-sparkles"></i>
-                                <div>
-                                    <div class="curriculum-title">Lesson 7: 12 Principles</div>
-                                    <div class="curriculum-desc">Squash & Stretch, Anticipation</div>
-                                </div>
-                            </div>
-                            <span class="curriculum-badge">Learn</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
 
-            <!-- SOFTWARE TOOLS SECTION -->
             <div class="title-divider-container" style="margin-top: 3rem;">
                 <div class="yellow-divider-line"></div>
                 <div class="section-title-badge">
-                    <h2>Software Tools Hub</h2>
+                    <h2>Featured</h2>
                 </div>
             </div>
 
             <div class="grid" style="margin-bottom: 2rem;">
                 <div class="card">
-                    <div style="font-size: 1.8rem; color: var(--secondary); margin-bottom: 0.75rem;"><i class="fa-solid fa-pen-nib"></i></div>
-                    <h3>Krita / FireAlpaca</h3>
-                    <p>Digital painting and frame-by-frame animation tools.</p>
+                    <div class="image-placeholder-box" style="min-height: 150px; margin-top: 0; margin-bottom: 1rem;">
+                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\Krita.png" alt="Featured Artwork" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <h3><i class="fa-solid fa-pen-nib"></i> Krita / FireAlpaca</h3>
+                    <p>Learn more about the recommended featured tool for your device.</p>
                     <a href="tools.html" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="card">
-                    <div style="font-size: 1.8rem; color: var(--secondary); margin-bottom: 0.75rem;"><i class="fa-solid fa-cube"></i></div>
-                    <h3>Blender</h3>
-                    <p>3D modeling, rigging, simulation, and rendering suite.</p>
-                    <a href="tools.html" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <div class="card">
-                    <div style="font-size: 1.8rem; color: var(--secondary); margin-bottom: 0.75rem;"><i class="fa-solid fa-vector-square"></i></div>
-                    <h3>Inkscape / Illustrator</h3>
-                    <p>Scalable vector asset creation and graphic design.</p>
-                    <a href="tools.html" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <div class="card">
-                    <div style="font-size: 1.8rem; color: var(--secondary); margin-bottom: 0.75rem;"><i class="fa-solid fa-clapperboard"></i></div>
-                    <h3>Adobe Animate</h3>
-                    <p>Industry standard for 2D digital vector animation.</p>
-                    <a href="tools.html" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="image-placeholder-box" style="min-height: 150px; margin-top: 0; margin-bottom: 1rem;">
+                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\cover .jpg" alt="Featured Artwork" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <p style="font-size: 0.8rem;">[ Multi-Panel Storyboard ]</p>
+                    </div>
+                    <h3>Showcase Gallery Featured Artwork</h3>
+                    <p>Explore the artworks of the developers for the lesson provided.</p>
+                    <a href="gallery.html" class="card-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
         </div>
 
-        <!-- Footer -->
         <footer>
             <p><strong>Solaris Ed - Senior High School Animation Learning Portal</strong></p>
             <p>Educational Purpose Only | Independent Student Project &copy; 2026</p>
@@ -236,5 +220,6 @@
 
     </div>
 
+   <script src="js/theme_mode.js"></script>
 </body>
 </html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="C:/Users/63907/3D Objects/Website Animation/Images/solaris_logo.png" rel="shortcut icon">
+    <title>Solaris Ed - Quiz & Assessment</title>
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Pure CSS Sidebar Toggle Checkbox -->
+    <input type="checkbox" id="sidebar-toggle" style="display: none;">
+
+    <!-- SIDEBAR NAVIGATION SA KALIWA -->
+    <aside class="sidebar">
+        <div>
+            <div class="logo-container">
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-sun"></i> Solaris <span>Ed</span>
+                </a>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="lessons.html"><i class="fa-solid fa-book-open"></i> Lessons</a></li>
+                    <li><a href="Quiz.html" class="active"><i class="fa-solid fa-brain"></i> Quiz & Assessment</a></li>
+                    <li><a href="guide.html"><i class="fa-solid fa-compass"></i> Student Guide</a></li>
+                    <li><a href="gallery.html"><i class="fa-solid fa-photo-film"></i> Showcase Gallery</a></li>
+                    <li><a href="tools.html"><i class="fa-solid fa-laptop-code"></i> Software Tools</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- THEME SWITCH FOOTER -->
+        <div class="sidebar-footer" style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+            <input type="checkbox" id="theme-toggle" style="display: none;" onchange="saveThemePreference()">
+            <label for="theme-toggle" class="theme-switch-wrapper">
+                <div class="theme-switch">
+                    <div class="slider">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+                <span class="theme-label-text">Dark Mode</span>
+            </label>
+        </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+        
+        <!-- TOP BAR -->
+        <div class="top-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <label for="sidebar-toggle" class="menu-toggle-label" title="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">
+                    TVL-ICT Animation Portal
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTAINER -->
+        <div class="container" style="padding-top: 2rem;">
+            
+            <!-- HEADER SECTION WITH PILL BADGE -->
+            <div class="title-divider-container">
+                <div class="yellow-divider-line"></div>
+                <div class="section-title-badge">
+                    <h2>QUIZ & ASSESSMENT</h2>
+                </div>
+            </div>
+
+            <!-- SUBTITLE/DESCRIPTION -->
+            <p style="text-align:center">
+                Test your knowledge and understanding of the foundational lessons and animation modules provided in Solaris Ed.
+            </p><br>
+
+            <!-- SINGLE FEATURED CARD NA KATULAD SA ESTILO NG LARAWAN -->
+            <div class="featured-tool-card">
+                
+                <!-- Inner Dashed Box (Katulad ng nasa larawan) -->
+                <!--div class="card-dashed-box">
+                    <div class="card-banner-content">
+                        
+                    </div>
+                </div-->
+
+                <!-- Card Info / Text Section -->
+                <div class="card-info-section">
+                    <h3><i class="fa-solid fa-brain quizlet-main-icon"></i> Quizlet Review & Practice</h3>
+                    <p>Subukan ang iyong kaalaman at maghanda para sa mga pagsusulit sa pamamagitan ng ating interactive Quizlet modules.</p>
+                    <img src="C:\Users\63907\3D Objects\Website Animation\Images\quizlet.jpg" alt="Canted View" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+                    <!-- Link Button na may Arrow (Ilagay ang Quizlet link sa href) -->
+                    <a href="https://quizlet.com/ph/1230673505/animation-history-graphic-design-film-basics-quiz-flash-cards/?i=5esm91&x=1jqY" target="_blank" class="card-learn-more-btn">
+                        <span>Test your knowledge</span> <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p><strong>Solaris Ed - Senior High School Animation Learning Portal</strong></p>
+            <p>Educational Purpose Only | Independent Student Project &copy; 2026</p>
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT FOR THEME PERSISTENCE -->
+    <script>
+        function saveThemePreference() {
+            const themeCheckbox = document.getElementById('theme-toggle');
+            if (themeCheckbox.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('solaris_theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('solaris_theme', 'light');
+            }
+        }
+
+        function applySavedTheme() {
+            const savedTheme = localStorage.getItem('solaris_theme');
+            const themeCheckbox = document.getElementById('theme-toggle');
+            
+            if (savedTheme === 'dark') {
+                if (themeCheckbox) themeCheckbox.checked = true;
+                document.body.classList.add('dark-mode');
+            } else {
+                if (themeCheckbox) themeCheckbox.checked = false;
+                document.body.classList.remove('dark-mode');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', applySavedTheme);
+    </script>
+</body>
+</html>

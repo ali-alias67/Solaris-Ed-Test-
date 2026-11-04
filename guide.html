@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="C:/Users/63907/3D Objects/Website Animation/Images/solaris_logo.png" rel="shortcut icon">
     <title>Solaris Ed - Student Guide</title>
-    <!-- Font Awesome Icons CDN -->
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Pure CSS Sidebar Toggle Checkbox -->
     <input type="checkbox" id="sidebar-toggle" style="display: none;">
 
-    <!-- SIDEBAR NAVIGATION -->
     <aside class="sidebar">
         <div>
             <div class="logo-container">
@@ -25,6 +23,7 @@
                 <ul>
                     <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a href="lessons.html"><i class="fa-solid fa-book-open"></i> Lessons</a></li>
+                    <li><a href="Quiz.html"><i class="fa-solid fa-brain"></i> Quiz & Assessment</a></li>
                     <li><a href="guide.html" class="active"><i class="fa-solid fa-compass"></i> Student Guide</a></li>
                     <li><a href="gallery.html"><i class="fa-solid fa-photo-film"></i> Showcase Gallery</a></li>
                     <li><a href="tools.html"><i class="fa-solid fa-laptop-code"></i> Software Tools</a></li>
@@ -32,12 +31,23 @@
                 </ul>
             </nav>
         </div>
+
+        <div class="sidebar-footer" style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+            <input type="checkbox" id="theme-toggle" style="display: none;" onchange="saveThemePreference()">
+            <label for="theme-toggle" class="theme-switch-wrapper">
+                <div class="theme-switch">
+                    <div class="slider">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+                <span class="theme-label-text">Dark Mode</span>
+            </label>
+        </div>
     </aside>
 
-    <!-- MAIN WRAPPER -->
     <div class="main-wrapper">
         
-        <!-- TOP BAR -->
         <div class="top-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem;">
             <div style="display: flex; align-items: center; gap: 1rem;">
                 <label for="sidebar-toggle" class="menu-toggle-label" title="Toggle Navigation">
@@ -55,7 +65,6 @@
             SENIOR HIGH SCHOOL • STUDENT LEARNING GUIDE & FAQS
         </div>
 
-        <!-- MAIN CONTENT CONTAINER -->
         <div class="container">
             
             <div class="title-divider-container">
@@ -65,11 +74,10 @@
                 </div>
             </div>
 
-            <!-- GUIDE CONTENT PANELS (Ginamitan ng sariling display block para hindi matakpan ng lessons CSS) -->
-            <div  class="card-aguide">
+            <div class="card-aguide">
                 <span class="lesson-tag">Orientation</span>
                 <h2>How to Use the Solaris Ed Portal</h2>
-                <p class="lesson-subtitle" style="margin-bottom: 1.5rem;">A comprehensive guide for Senior High School TVL-ICT Animation students.</p>
+                <p class="lesson-subtitle" style="margin-bottom: 1.5rem;">A comprehensive guide for the Learning Portal User.</p>
 
                 <div class="lesson-body-text">
                     <h3>1. Using the Dual-Mode Lesson Viewer</h3>
@@ -80,7 +88,15 @@
                     </ul>
 
                     <h3>2. Following the Curriculum Scope</h3>
-                    <p>It is recommended to follow the sequential flow of modules starting from <em>Lesson 1 (History)</em> up to <em>Lesson 7 (12 Principles)</em> to better grasp the foundations of digital and traditional animation.</p>
+                    <p>It is recommended to follow the sequential flow of modules starting from <em>Lesson 1 (History)</em> up to <em>Lesson 6 (Framing)</em> to better grasp the foundations of digital and traditional animation.</p>
+
+                    <h3 style="font-size: 1.1rem; font-weight: bold; margin-top: 15px; color: #1e293b;">3. Project Submissions & Guidelines</h3>
+                    <p style="font-size: 0.95rem; color: #475569; line-height: 1.6; margin-bottom: 10px;">
+                     <ul>
+                        <li><strong>File Naming Convention:</strong> Always use the standard format before uploading or submitting your outputs: <code>LastName_FirstName_TaskNumber.mp4</code> (e.g., <em>Santos_Juan_Task1.mp4</em>).</li>
+                        <li><strong>Software & Assets:</strong> Ensure all vector files, keyframe layouts, and exported video formats comply with the standard requirements specified per module.</li>
+                     </ul>
+                    </p>
 
                     <h3 style="margin-top: 2rem;">Frequently Asked Questions (FAQs)</h3>
                     
@@ -100,12 +116,13 @@
 
         </div>
 
-        <!-- FOOTER -->
         <footer>
             <p><strong>Solaris Ed - Senior High School Animation Learning Portal</strong></p>
             <p>Educational Purpose Only | Independent Student Project &copy; 2026</p>
         </footer>
 
     </div>
+
+   <script src="js/theme_mode.js"></script>
 </body>
 </html>

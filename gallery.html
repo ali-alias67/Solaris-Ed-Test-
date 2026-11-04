@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="C:/Users/63907/3D Objects/Website Animation/Images/solaris_logo.png" rel="shortcut icon">
     <title>Solaris Ed - Showcase Gallery</title>
-    <!-- Font Awesome Icons CDN -->
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/expanded.css">
 </head>
 <body>
-    <!-- Pure CSS Sidebar Toggle Checkbox -->
     <input type="checkbox" id="sidebar-toggle" style="display: none;">
 
-    <!-- SIDEBAR NAVIGATION -->
     <aside class="sidebar">
         <div>
             <div class="logo-container">
@@ -25,6 +24,7 @@
                 <ul>
                     <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a href="lessons.html"><i class="fa-solid fa-book-open"></i> Lessons</a></li>
+                    <li><a href="Quiz.html"><i class="fa-solid fa-brain"></i> Quiz & Assessment</a></li>
                     <li><a href="guide.html"><i class="fa-solid fa-compass"></i> Student Guide</a></li>
                     <li><a href="gallery.html" class="active"><i class="fa-solid fa-photo-film"></i> Showcase Gallery</a></li>
                     <li><a href="tools.html"><i class="fa-solid fa-laptop-code"></i> Software Tools</a></li>
@@ -32,13 +32,24 @@
                 </ul>
             </nav>
         </div>
+
+        <div class="sidebar-footer" style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+            <input type="checkbox" id="theme-toggle" style="display: none;" onchange="saveThemePreference()">
+            <label for="theme-toggle" class="theme-switch-wrapper">
+                <div class="theme-switch">
+                    <div class="slider">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+                <span class="theme-label-text">Dark Mode</span>
+            </label>
+        </div>
     </aside>
 
-    <!-- MAIN WRAPPER -->
     <div class="main-wrapper">
         
-        <!-- TOP BAR -->
-       <div class="top-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem;">
+        <div class="top-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem;">
             <div style="display: flex; align-items: center; gap: 1rem;">
                 <label for="sidebar-toggle" class="menu-toggle-label" title="Toggle Navigation">
                     <span></span>
@@ -52,10 +63,9 @@
         </div>
 
         <div class="portal-banner">
-            SENIOR HIGH SCHOOL â€¢ STUDENT SHOWCASE & ARTWORK GALLERY
+            SENIOR HIGH SCHOOL • STUDENT SHOWCASE & ARTWORK GALLERY
         </div>
 
-        <!-- MAIN CONTENT CONTAINER -->
         <div class="container">
             
             <div class="title-divider-container">
@@ -66,55 +76,53 @@
             </div>
 
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">
-                Explore sample creative plates, character models, and animation storyboards crafted by TVL-ICT students.
+                Explore sample creative plates by ICT students. Click any image to expand.
             </p>
 
-            <!-- GALLERY GRID -->
-            <div class="grid">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                 
-                <!-- Gallery Item 1 -->
-                <div class="card">
-                    <div class="image-placeholder-box" style="min-height: 150px; margin-top: 0; margin-bottom: 1rem;">
-                        <i class="fa-solid fa-image placeholder-icon" style="font-size: 2rem;"></i>
-                        <p style="font-size: 0.8rem;">[ Character Concept Art ]</p>
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\cover .jpg" alt="Example of Flipbook" class="gallery-img" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this)">
                     </div>
-                    <h3>Original Character Design</h3>
-                    <p style="font-size: 0.85rem;">Digital vector illustration showing clean line art, proper shading values, and color harmony.</p>
-                    <span class="curriculum-badge" style="display: inline-block; margin-top: 0.5rem;">2D Vector</span>
+                    
+                    <h3 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem; margin-top: 1rem;">Example of Flipbook</h3>
                 </div>
 
-                <!-- Gallery Item 2 -->
-                <div class="card">
-                    <div class="image-placeholder-box" style="min-height: 150px; margin-top: 0; margin-bottom: 1rem;">
-                        <i class="fa-solid fa-image placeholder-icon" style="font-size: 2rem;"></i>
-                        <p style="font-size: 0.8rem;">[ Multi-Panel Storyboard ]</p>
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\showcase gallery 1.jpg" alt="Example of Elements of Design Activity" class="gallery-img" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this)">
                     </div>
-                    <h3>Storyboard Layout</h3>
-                    <p style="font-size: 0.85rem;">Multi-page narrative framing utilizing various camera angles (Wide Shot, Close-Up) and scene direction.</p>
-                    <span class="curriculum-badge" style="display: inline-block; margin-top: 0.5rem;">Pre-Production</span>
+                    
+                    <h3 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem; margin-top: 1rem;">Example of Elements of Design Activity</h3>
                 </div>
 
-                <!-- Gallery Item 3 -->
-                <div class="card">
-                    <div class="image-placeholder-box" style="min-height: 150px; margin-top: 0; margin-bottom: 1rem;">
-                        <i class="fa-solid fa-image placeholder-icon" style="font-size: 2rem;"></i>
-                        <p style="font-size: 0.8rem;">[ Bouncing Ball Animation ]</p>
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\ella.jpg" alt="Example of Principles of Design Activity" class="gallery-img" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" onclick="openLightbox(this)">
                     </div>
-                    <h3>Squash & Stretch Motion</h3>
-                    <p style="font-size: 0.85rem;">Frame-by-frame practice applying the 12 principles of animation, highlighting weight, arcs, and timing.</p>
-                    <span class="curriculum-badge" style="display: inline-block; margin-top: 0.5rem;">Frame-by-Frame</span>
+                    <h3 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem; margin-top: 1rem;">Example of Principles of Design Activity</h3>
                 </div>
 
             </div>
 
         </div>
 
-        <!-- FOOTER -->
         <footer>
             <p><strong>Solaris Ed - Senior High School Animation Learning Portal</strong></p>
             <p>Educational Purpose Only | Independent Student Project &copy; 2026</p>
         </footer>
 
     </div>
+
+    <!-- Lightbox Modal Component -->
+    <div id="lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="forceCloseLightbox()">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Expanded View">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    
+    <script src="js/gallery.js"></script>
 </body>
 </html>

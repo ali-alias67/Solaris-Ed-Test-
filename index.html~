@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="C:/Users/63907/3D Objects/Website Animation/Images/solaris_logo.png" rel="shortcut icon">
+    <title>Solaris Ed - Animation Learning Portal</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <input type="checkbox" id="sidebar-toggle" style="display: none;">
+
+    <aside class="sidebar">
+        <div>
+            <div class="logo-container">
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-sun"></i> Solaris <span>Ed</span>
+                </a>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="lessons.html"><i class="fa-solid fa-book-open"></i> Lessons</a></li>
+                    <li><a href="Quiz.html"><i class="fa-solid fa-brain"></i> Quiz & Assessment</a></li>
+                    <li><a href="guide.html"><i class="fa-solid fa-compass"></i> Student Guide</a></li>
+                    <li><a href="gallery.html"><i class="fa-solid fa-photo-film"></i> Showcase Gallery</a></li>
+                    <li><a href="tools.html"><i class="fa-solid fa-laptop-code"></i> Software Tools</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="sidebar-footer" style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+            <input type="checkbox" id="theme-toggle" style="display: none;" onchange="saveThemePreference()">
+            
+            <label for="theme-toggle" class="theme-switch-wrapper">
+                <div class="theme-switch">
+                    <div class="slider">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+                <span class="theme-label-text">Dark Mode</span>
+            </label>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+        
+        <div class="top-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <label for="sidebar-toggle" class="menu-toggle-label" title="Toggle Navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">
+                    TVL-ICT Animation Portal
+                </div>
+            </div>
+        </div>
+
+        <div class="portal-banner">
+            SENIOR HIGH SCHOOL • ANIMATION LEARNING PORTAL
+        </div>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Solaris Ed Learning Portal</h1>
+                <p>Welcome educators and learners! Solaris Ed is an interactive learning portal designed to guide the user throughout the subject Animation.</p>
+                <div class="hero-buttons">
+                    <a href="lessons.html" class="btn-primary"><i class="fa-solid fa-book-open"></i> Explore Lessons</a>
+                    <a href="guide.html" class="btn-secondary"><i class="fa-solid fa-compass"></i> Student Guide</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            
+            <div class="title-divider-container">
+                <div class="yellow-divider-line"></div>
+                <div class="section-title-badge">
+                    <h2>Portal Overview</h2>
+                </div>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Structured Modules</h3>
+                    <p>Comprehensive lesson units covering animation history, visual elements, principles of design, and workflows.</p>
+                    <a href="lessons.html" class="card-link">View Modules <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="card">
+                    <h3>Interactive Learning</h3>
+                    <p>Test your knowledge whether you could really understand the lessons/modules provided.</p>
+                    <a href="Quiz.html" class="card-link">Take the Quiz <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="card">
+                    <h3>Foundations</h3>
+                    <p>Know more about the website, behind the developers, and its goals.</p>
+                    <a href="about.html" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="lessons-preview" style="max-width: 100% !important; margin: 2rem 0 !important;">
+                <h2 style="font-size: 1.3rem; margin-bottom: 0.25rem;">Curriculum Scope (Lessons 1 – 6)</h2>
+                <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">Foundational topics in SHS Animation:</p>
+                
+                <ul class="curriculum-list">
+                    <li>
+                        <a href="lessons.html" class="curriculum-item">
+                            <div class="curriculum-left">
+                                <i class="fa-solid fa-film"></i>
+                                <div>
+                                    <div class="curriculum-title">Lesson 1: Animation Through Ages</div>
+                                    <div class="curriculum-desc">Pre-Digital Optical Inventions</div>
+                                </div>
+                            </div>
+                            <span class="curriculum-badge">Learn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html" class="curriculum-item">
+                            <div class="curriculum-left">
+                                <i class="fa-solid fa-rocket"></i>
+                                <div>
+                                    <div class="curriculum-title">Lesson 2: Launch Animation Studio</div>
+                                    <div class="curriculum-desc">Production Pipeline & Roles</div>
+                                </div>
+                            </div>
+                            <span class="curriculum-badge">Learn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html" class="curriculum-item">
+                            <div class="curriculum-left">
+                                <i class="fa-solid fa-palette"></i>
+                                <div>
+                                    <div class="curriculum-title">Lesson 3: 7 Visual Elements</div>
+                                    <div class="curriculum-desc">Line, Shape, Form, Color, Space</div>
+                                </div>
+                            </div>
+                            <span class="curriculum-badge">Learn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html" class="curriculum-item">
+                            <div class="curriculum-left">
+                                <i class="fa-solid fa-shapes"></i>
+                                <div>
+                                    <div class="curriculum-title">Lesson 4: 7 Principles of Design</div>
+                                    <div class="curriculum-desc">Balance, Contrast, Movement</div>
+                                </div>
+                            </div>
+                            <span class="curriculum-badge">Learn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html" class="curriculum-item">
+                            <div class="curriculum-left">
+                                <i class="fa-solid fa-file-image"></i>
+                                <div>
+                                    <div class="curriculum-title">Lesson 5: Image File Formats</div>
+                                    <div class="curriculum-desc">Raster vs Vector Assets</div>
+                                </div>
+                            </div>
+                            <span class="curriculum-badge">Learn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lessons.html" class="curriculum-item">
+                            <div class="curriculum-left">
+                                <i class="fa-solid fa-video"></i>
+                                <div>
+                                    <div class="curriculum-title">Lesson 6: Camera Shots & Angles</div>
+                                    <div class="curriculum-desc">Cinematic Framing & Storytelling</div>
+                                </div>
+                            </div>
+                            <span class="curriculum-badge">Learn</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="title-divider-container" style="margin-top: 3rem;">
+                <div class="yellow-divider-line"></div>
+                <div class="section-title-badge">
+                    <h2>Featured</h2>
+                </div>
+            </div>
+
+            <div class="grid" style="margin-bottom: 2rem;">
+                <div class="card">
+                    <div class="image-placeholder-box" style="min-height: 150px; margin-top: 0; margin-bottom: 1rem;">
+                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\Krita.png" alt="Featured Artwork" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    </div>
+                    <h3><i class="fa-solid fa-pen-nib"></i> Krita / FireAlpaca</h3>
+                    <p>Learn more about the recommended featured tool for your device.</p>
+                    <a href="tools.html" class="card-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="card">
+                    <div class="image-placeholder-box" style="min-height: 150px; margin-top: 0; margin-bottom: 1rem;">
+                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\cover .jpg" alt="Featured Artwork" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                        <p style="font-size: 0.8rem;">[ Multi-Panel Storyboard ]</p>
+                    </div>
+                    <h3>Showcase Gallery Featured Artwork</h3>
+                    <p>Explore the artworks of the developers for the lesson provided.</p>
+                    <a href="gallery.html" class="card-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <p><strong>Solaris Ed - Senior High School Animation Learning Portal</strong></p>
+            <p>Educational Purpose Only | Independent Student Project &copy; 2026</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function saveThemePreference() {
+            const themeCheckbox = document.getElementById('theme-toggle');
+            if (themeCheckbox && themeCheckbox.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('solaris_theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('solaris_theme', 'light');
+            }
+        }
+
+        function applySavedTheme() {
+            const savedTheme = localStorage.getItem('solaris_theme');
+            const themeCheckbox = document.getElementById('theme-toggle');
+            
+            if (savedTheme === 'dark') {
+                if (themeCheckbox) themeCheckbox.checked = true;
+                document.body.classList.add('dark-mode');
+            } else {
+                if (themeCheckbox) themeCheckbox.checked = false;
+                document.body.classList.remove('dark-mode');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', applySavedTheme);
+    </script>
+</body>
+</html>

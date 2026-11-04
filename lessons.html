@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="C:/Users/63907/3D Objects/Website Animation/Images/solaris_logo.png" rel="shortcut icon">
     <title>Solaris Ed - Lessons & Modules</title>
-    <!-- Font Awesome Icons CDN -->
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/expanded.css">
 </head>
 <body>
-    <!-- Pure CSS Sidebar Toggle Checkbox -->
+    
     <input type="checkbox" id="sidebar-toggle" style="display: none;">
 
-    <!-- SIDEBAR NAVIGATION -->
     <aside class="sidebar">
         <div>
             <div class="logo-container">
@@ -25,6 +25,7 @@
                 <ul>
                     <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a href="lessons.html" class="active"><i class="fa-solid fa-book-open"></i> Lessons</a></li>
+                    <li><a href="Quiz.html"><i class="fa-solid fa-brain"></i> Quiz & Assessment</a></li>
                     <li><a href="guide.html"><i class="fa-solid fa-compass"></i> Student Guide</a></li>
                     <li><a href="gallery.html"><i class="fa-solid fa-photo-film"></i> Showcase Gallery</a></li>
                     <li><a href="tools.html"><i class="fa-solid fa-laptop-code"></i> Software Tools</a></li>
@@ -32,12 +33,22 @@
                 </ul>
             </nav>
         </div>
+        <div class="sidebar-footer" style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+            <input type="checkbox" id="theme-toggle" style="display: none;" onchange="saveThemePreference()">
+            <label for="theme-toggle" class="theme-switch-wrapper">
+                <div class="theme-switch">
+                    <div class="slider">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+                <span class="theme-label-text">Dark Mode</span>
+            </label>
+        </div>
     </aside>
 
-    <!-- MAIN WRAPPER -->
     <div class="main-wrapper">
         
-        <!-- TOP BAR -->
         <div class="top-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem;">
             <div style="display: flex; align-items: center; gap: 1rem;">
                 <label for="sidebar-toggle" class="menu-toggle-label" title="Toggle Navigation">
@@ -55,7 +66,6 @@
             SENIOR HIGH SCHOOL • CURRICULUM LESSONS & MODULES
         </div>
 
-        <!-- MAIN CONTENT CONTAINER -->
         <div class="container">
             
             <div class="title-divider-container">
@@ -69,7 +79,6 @@
                 Foundational topics in SHS Animation: Select a lesson module below to view comprehensive topics and summaries.
             </p>
 
-            <!-- PURE CSS LESSON WRAPPER (DEFAULT CHECKED ANG WELCOME PANEL) -->
             <input type="radio" name="lesson-tab" id="tab-welcome" checked class="tool-radio">
             <input type="radio" name="lesson-tab" id="tab-lesson1" class="tool-radio">
             <input type="radio" name="lesson-tab" id="tab-lesson2" class="tool-radio">
@@ -79,7 +88,6 @@
             <input type="radio" name="lesson-tab" id="tab-lesson6" class="tool-radio">
             <input type="radio" name="lesson-tab" id="tab-lesson7" class="tool-radio">
 
-            <!-- LESSON NAVIGATION BAR (LESSON 1 - 7 SA TAAS) -->
             <div class="lesson-nav-bar">
                 <label for="tab-lesson1" class="lesson-nav-btn"><i class="fa-solid fa-film"></i>Lesson 1: History</label>
                 <label for="tab-lesson2" class="lesson-nav-btn"><i class="fa-solid fa-rocket"></i> Lesson 2: Production</label>
@@ -89,10 +97,8 @@
                 <label for="tab-lesson6" class="lesson-nav-btn"><i class="fa-solid fa-video"></i> Lesson 6: Framing</label>
             </div>
 
-            <!-- LESSON CONTENT DISPLAY AREA -->
             <div class="lesson-content-display">
                 
-                <!-- WELCOME PANEL -->
                 <div class="lesson-panel" id="panel-welcome" style="display: block;">
                     <div class="welcome-box">
                         <div class="welcome-icon"><i class="fa-solid fa-book-bookmark"></i></div>
@@ -103,7 +109,6 @@
                     </div>
                 </div>
 
-                <!-- LESSON 1 PANEL -->
                 <div class="lesson-panel" id="panel-lesson1">
                     
                     <input type="radio" name="lesson1-view" id="l1-full" checked class="tool-radio">
@@ -120,8 +125,6 @@
                             <label for="l1-summary" class="toggle-btn btn-summary"><i class="fa-solid fa-bolt"></i> Summarized</label>
                         </div>
                     </div>
-
-                    <!-- FULL VERSION CONTENT -->
                     <div class="full-content-view">
                         <div class="lesson-body-text">
                             <h3>The Four Eras of Animation</h3>
@@ -136,13 +139,10 @@
                             <h3 style="margin-top: 2rem;">Examples of Pre-Digital Optical Inventions</h3>
                             <p>Before the invention of motion picture cameras, inventors and artists created ingenious mechanical devices to trick the human eye into seeing continuous motion. Here are the primary optical inventions used during this era:</p>
 
-                            <!-- 2X2 GRID CONTAINER PARA SA 4 NA CARDS -->
                             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
-                                
-                                <!-- Card 1: Thaumatrope -->
                                 <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
                                     <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
-                                        <img src="thaumatrope.jpg" alt="Thaumatrope" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\thaumatrope.jpg" alt="Thaumatrope" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
                                     </div>
                                     <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 1.1: Thaumatrope (1824)</p>
                                     
@@ -150,10 +150,9 @@
                                     <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A small disc with different pictures on each side (such as a bird and a cage). When spun quickly using attached strings, persistence of vision blends the two images into one.</p>
                                 </div>
 
-                                <!-- Card 2: Phenakistoscope -->
                                 <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
                                     <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
-                                        <img src="phenakistoscope.jpg" alt="Phenakistoscope" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\phenakistoscope.jpg" alt="Phenakistoscope" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
                                     </div>
                                     <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 1.2: Phenakistoscope (1832)</p>
                                     
@@ -161,10 +160,9 @@
                                     <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">Invented by Joseph Plateau, this spinning cardboard disc featured sequential drawings and radial slits, creating a fluid moving sequence when viewed in a mirror.</p>
                                 </div>
 
-                                <!-- Card 3: Zoetrope -->
                                 <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
                                     <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
-                                        <img src="zoetrope.jpg" alt="Zoetrope" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\zoetrope.jpg" alt="Zoetrope" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
                                     </div>
                                     <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 1.3: Zoetrope (1834)</p>
                                     
@@ -172,21 +170,45 @@
                                     <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A cylindrical device featuring vertical slits with sequential drawings inside. When spun, multiple viewers could watch the animated sequence simultaneously.</p>
                                 </div>
 
-                                <!-- Card 4: Flipbook -->
                                 <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
                                     <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
-                                        <img src="flipbook.jpg" alt="Flipbook" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\flipbook.png" alt="Flipbook" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
                                     </div>
-                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 1.4: The Flipbook (1868)</p>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;"></p>
                                     
                                     <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">The Flipbook</h4>
                                     <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A book with a series of images that vary gradually from page to page. When pages are flipped rapidly, the sequential images simulate motion through persistence of vision.</p>
                                 </div>
                             </div>
+                            <div style="display: flex; justify-content: center; margin-top: 2rem;">
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; max-width: 600px;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 220px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\Emile_Cohl.jpg" alt="Historical Overview" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 1.5: Evolution of Early Animation Pioneers</p>
+                                    
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem; text-align: center;">The Pioneers of Cartoons</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; text-align: center;">Emile Cohl is widely recognized as the Father of Animated Cartoons, transitioning optical toys into cinematic motion pictures.</p>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; justify-content: center; margin-top: 2rem;">
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; width: 100%; max-width: 700px;">
+                                    <div style="border-radius: 12px; overflow: hidden; background: rgba(0,0,0,0.4); display: flex; justify-content: center; align-items: center;">
+                                        <!-- Palitan ang 'your-local-video.mp4' ng tamang filename o path ng video sa iyong folder -->
+                                        <video controls style="width: 100%; max-height: 380px; border-radius: 8px; outline: none;">
+                                            <source src="C:\Users\63907\3D Objects\Website Animation\Images\Fantasmagorie.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem; margin-bottom: 0.5rem;">Video 1.1: Local Video Discussion - Pre-Digital Animation</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.3rem; font-size: 1.1rem; text-align: center;">Featured Lesson Video</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; text-align: center;">Watch the first ever animated video by Emile Cohl.</p>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-
-                    <!-- SUMMARIZED VERSION CONTENT -->
                     <div class="summary-content-view">
                         <div class="summary-highlight-card">
                             <span class="summary-badge"><i class="fa-solid fa-bolt"></i> Quick Summary</span>
@@ -204,82 +226,636 @@
 
                 </div>
 
-                <!-- LESSON 2 PANEL -->
                 <div class="lesson-panel" id="panel-lesson2">
-                    <span class="lesson-tag">Lesson 2</span>
-                    <h2>Launch Animation Studio</h2>
-                    <p class="lesson-subtitle">Production Pipeline & Roles</p>
-                    <div class="lesson-body-text" style="margin-top: 1.5rem;">
-                        <h3>Production Pipeline & Key Roles</h3>
-                        <p>Learn how an animation studio operates. Understand the three main phases of animation production (Pre-Production, Production, and Post-Production) along with key studio roles such as Director, Storyboard Artist, Key Animator, In-betweener, Cleanup Artist, and Compositor.</p>
+                    
+                    <input type="radio" name="lesson2-view" id="l2-full" checked class="tool-radio">
+                    <input type="radio" name="lesson2-view" id="l2-summary" class="tool-radio">
+
+                    <div class="lesson-header-row">
+                        <div>
+                            <span class="lesson-tag">Lesson 2</span>
+                            <h2>Launch Your Animation Studio</h2>
+                            <p class="lesson-subtitle">Production Pipeline & Key Roles</p>
+                        </div>
+                        <div class="view-toggle-container">
+                            <label for="l2-full" class="toggle-btn btn-full"><i class="fa-solid fa-file-lines"></i> Full Version</label>
+                            <label for="l2-summary" class="toggle-btn btn-summary"><i class="fa-solid fa-bolt"></i> Summarized</label>
+                        </div>
                     </div>
+
+                    <div class="full-content-view">
+                        <div class="lesson-body-text">
+                            <h3>Launching an Animation Studio</h3>
+                            <p>Launching an animation studio means creating a company that produces cartoons, anime, movies, or educational videos. To ensure success, understanding the core foundational steps and organizational workflow is essential.</p>
+
+                            <h3>Key Steps in Launching a Studio</h3>
+                            <ul>
+                                <li><strong>1. Determine the Purpose:</strong> Decide what type of animation to create and identify the target audience.</li>
+                                <li><strong>2. Develop the Concept:</strong> Create story ideas, characters, and visual styles.</li>
+                                <li><strong>3. Prepare Equipment and Software:</strong> Use computers, drawing tablets, and animation software to produce animations.</li>
+                                <li><strong>4. Organize the Team:</strong> Assign dedicated roles to ensure smooth workflow and efficient production.</li>
+                                <li><strong>5. Plan the Production:</strong> Prepare the budget, schedule, and resources to avoid delays.</li>
+                                <li><strong>6. Create and Promote the Animation:</strong> Produce, edit, check, and release the animation to the target audience.</li>
+                            </ul>
+
+                            <h3 style="margin-top: 2rem;">Studio Roles & Organization</h3>
+                            <p>Each team member plays a vital role in bringing an animated project from concept to final screen release:</p>
+                            <ul>
+                                <li><strong>Producer:</strong> Oversees the entire project, managing business operations and funding.</li>
+                                <li><strong>Production Manager:</strong> Manages budget, schedule, daily resources, and studio timelines.</li>
+                                <li><strong>Storyboard Artist:</strong> Draws important scenes and visualizes the script into sequential panels.</li>
+                                <li><strong>Character Designer:</strong> Designs the physical appearance, costumes, and expressions of characters.</li>
+                                <li><strong>Animator:</strong> Creates fluid movement and performance for the characters.</li>
+                                <li><strong>Editor:</strong> Arranges, times, and improves scenes during post-production.</li>
+                            </ul>
+
+                            <h3 style="margin-top: 2rem;">Studio Workflow Overview</h3>
+                            <p>Visualizing the structure and workflow of a professional animation studio setup:</p>
+
+                            <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; width: 100%; max-width: 550px;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 220px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\studio.jpg" alt="Animation Studio Launch" style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 2.1: Animation Studio Pipeline & Team Collaboration</p>
+                                    
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem; text-align: center;">Studio Operations</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; text-align: center;">A successful animation studio needs creativity, teamwork, proper planning, and effective management.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="summary-content-view">
+                        <div class="summary-highlight-card">
+                            <span class="summary-badge"><i class="fa-solid fa-bolt"></i> Quick Summary</span>
+                            <ul class="summary-list">
+                                <li><strong>Studio Definition:</strong> Creating a company that produces cartoons, anime, movies, or educational videos.</li>
+                                <li><strong>Determine Purpose:</strong> Decide animation type and identify target audience.</li>
+                                <li><strong>Develop Concept:</strong> Create story ideas, characters, and visual styles.</li>
+                                <li><strong>Prepare Equipment:</strong> Utilize computers, drawing tablets, and animation software.</li>
+                                <li><strong>Team Roles:</strong> Producer (oversees project), Production Manager (budget/schedule), Storyboard Artist (draws scenes), Character Designer (character styling), Animator (movement), and Editor (arranges scenes).</li>
+                                <li><strong>Plan Production:</strong> Prepare budgets and resources to avoid delays.</li>
+                                <li><strong>Conclusion:</strong> A successful animation studio requires creativity, teamwork, proper planning, and effective management.</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- LESSON 3 PANEL -->
                 <div class="lesson-panel" id="panel-lesson3">
-                    <span class="lesson-tag">Lesson 3</span>
-                    <h2>7 Visual Elements</h2>
-                    <p class="lesson-subtitle">Line, Shape, Form, Color, Space</p>
-                    <div class="lesson-body-text" style="margin-top: 1.5rem;">
-                        <h3>Building Blocks of Art and Animation</h3>
-                        <p>Explore the fundamental visual elements essential for layout design and character creation: Line, Shape, Form, Color, Space, Texture, and Value.</p>
-                    </div>
-                </div>
+                    
+                    <input type="radio" name="lesson3-view" id="l3-full" checked class="tool-radio">
+                    <input type="radio" name="lesson3-view" id="l3-summary" class="tool-radio">
 
-                <!-- LESSON 4 PANEL -->
+                    <div class="lesson-header-row">
+                        <div>
+                            <span class="lesson-tag">Lesson 3</span>
+                            <h2>7 Visual Elements & Typography</h2>
+                            <p class="lesson-subtitle">Foundational Building Blocks of Art and Design</p>
+                        </div>
+                        <div class="view-toggle-container">
+                            <label for="l3-full" class="toggle-btn btn-full"><i class="fa-solid fa-file-lines"></i> Full Version</label>
+                            <label for="l3-summary" class="toggle-btn btn-summary"><i class="fa-solid fa-bolt"></i> Summarized</label>
+                        </div>
+                    </div>
+
+                    <div class="full-content-view">
+                        <div class="lesson-body-text">
+                            <h3>The 7 Basic Elements of Visual Art</h3>
+                            <p>The 7 basic elements of visual art are the foundational building blocks artists use to create a composition.</p>
+
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
+                                
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\Lines.jpg" alt="Line Element" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 3.1: Line Element</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">1. Line</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A moving point across a surface. It can be straight, curved, thick, thin, horizontal, vertical, or diagonal to outline shapes and guide the eye.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\shape.jpg" alt="Shape Element" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 3.2: Shape Element</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">2. Shape</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A flat, two-dimensional enclosed area. Shapes can be geometric (like squares and circles) or organic (like natural, free-flowing forms).</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\forms.jpg" alt="Form Element" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 3.3: Form Element</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">3. Form</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A three-dimensional object that has length, width, and depth. While actual form exists in sculptures and ceramics, it can also be implied in 2D art using shading and perspective.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\space.jpg" alt="Space Element" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 3.4: Space Element</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">4. Space</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">The area around, within, or between objects. It includes positive space (main subject) and negative space (background), plus the illusion of depth.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\Color.jpg" alt="Color Element" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 3.5: Color Element</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">5. Color</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">Formed from reflected light and defined by three properties: hue (color name), value (lightness/darkness), and intensity/chroma (brightness/dullness).</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\Value.jpg" alt="Value Element" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 3.6: Value Element</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">6. Value</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">The relative lightness or darkness of a color or surface. Ranging from pure white to deep black, value creates contrast and builds volume.</p>
+                                </div>
+
+                            </div>
+
+                            <div style="margin-top: 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px; max-width: 400px; margin: 0 auto; width: 100%;">
+                                    <img src="C:\Users\63907\3D Objects\Website Animation\Images\Texture.jpg" alt="Texture Element" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                </div>
+                                <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 3.7: Texture Element</p>
+                                <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem; text-align: center;">7. Texture</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; text-align: center; max-width: 600px; margin: 0 auto;">The surface quality of an artwork. It can be actual (how a surface physically feels, like rough canvas or smooth clay) or implied (the visual illusion of a tactile surface rendered with paint or pencil).</p>
+                            </div>
+
+                            <h3 style="margin-top: 2.5rem;">Typography in Design</h3>
+                            <p>Typography is the visual art and arrangement of type to communicate both literally and visually. Beyond carrying words, typography functions as a core visual building block in graphic design.</p>
+                            
+                            <p style="margin-top: 1rem;">Key typographical terms and text formatting styles include:</p>
+                            <ul>
+                               <li><strong>Font:</strong> A complete graphical set or family of text characters sharing a specific weight, width, and style (e.g., Arial, Helvetica).</li>
+                               <li><strong>Sans Serif / Sans:</strong> Typefaces that do not feature small projecting features called "serifs" at the end of strokes, offering a clean, modern aesthetic.</li>
+                               <li><strong>Italic:</strong> A stylized font variation where characters slant to the right, often used for emphasis or titles.</li>
+                               <li><strong>Bold:</strong> A heavier, thicker weight variant of a font used to draw immediate visual attention or highlight key terms.</li>
+                               <li><strong>Underlined:</strong> Text formatting featuring a horizontal line running directly beneath the baseline of the characters.</li>
+                            </ul>
+
+                            <p style="margin-top: 1.5rem;">The three primary types of text spacing in typography are:</p>
+                            <ul>
+                                <li><strong>1. Tracking (Letter-Spacing):</strong> The uniform adjustment of spacing across an entire word, phrase, or block of text.</li>
+                                <li><strong>2. Kerning:</strong> The adjustment of space between two specific individual characters to achieve visual balance.</li>
+                                <li><strong>3. Leading (Line-Spacing):</strong> The vertical baseline-to-baseline distance between consecutive lines of text.</li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="summary-content-view">
+                        <div class="summary-highlight-card">
+                            <span class="summary-badge"><i class="fa-solid fa-bolt"></i> Quick Summary</span>
+                            <ul class="summary-list">
+                                <li><strong>7 Visual Elements:</strong> Line, Shape, Form, Space, Color, Value, and Texture.</li>
+                                <li><strong>Typography Styles:</strong> Font, Sans Serif / Sans, Italic, Bold, and Underlined.</li>
+                                <li><strong>Three Spacing Types:</strong> Tracking (letter-spacing), Kerning, and Leading (line-spacing).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
                 <div class="lesson-panel" id="panel-lesson4">
-                    <span class="lesson-tag">Lesson 4</span>
-                    <h2>7 Principles of Design</h2>
-                    <p class="lesson-subtitle">Balance, Contrast, Movement</p>
-                    <div class="lesson-body-text" style="margin-top: 1.5rem;">
-                        <h3>Creating Balanced Visuals</h3>
-                        <p>Master how to arrange visual elements effectively using key principles such as Balance, Contrast, Movement, Emphasis, Pattern, Rhythm, and Unity to guide the viewer's focal point.</p>
-                    </div>
-                </div>
+                    
+                    <input type="radio" name="lesson4-view" id="l4-full" checked class="tool-radio">
+                    <input type="radio" name="lesson4-view" id="l4-summary" class="tool-radio">
 
-                <!-- LESSON 5 PANEL -->
+                    <div class="lesson-header-row">
+                        <div>
+                            <span class="lesson-tag">Lesson 4</span>
+                            <h2>7 Principles of Design</h2>
+                            <p class="lesson-subtitle">Balance, Contrast, Movement & Composition</p>
+                        </div>
+                        <div class="view-toggle-container">
+                            <label for="l4-full" class="toggle-btn btn-full"><i class="fa-solid fa-file-lines"></i> Full Version</label>
+                            <label for="l4-summary" class="toggle-btn btn-summary"><i class="fa-solid fa-bolt"></i> Summarized</label>
+                        </div>
+                    </div>
+                    <div class="full-content-view">
+                        <div class="lesson-body-text">
+                            <h3>The 7 Principles of Design</h3>
+                            <p>The principles of design are guidelines on how to arrange and combine the visual elements (like line, shape, and color) to create aesthetically pleasing and effective compositions.</p>
+
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
+                                
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\Balance.jpg" alt="Balance Principle" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 4.1: Balance Principle</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">1. Balance</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">The distribution of visual weight in a composition. It can be symmetrical (even on both sides), asymmetrical (balanced through contrasting elements), or radial (centered).</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\contrast.jpg" alt="Contrast Principle" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 4.2: Contrast Principle</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">2. Contrast</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">The juxtaposition of different elements (such as light vs. dark colors, rough vs. smooth textures, or large vs. small shapes) to create visual interest and highlight key areas.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\movement.jpg" alt="Movement Principle" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 4.3: Movement Principle</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">3. Movement</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">The path the viewer’s eye takes through the artwork. Guided by lines, shapes, and colors, it directs attention across the composition.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\emphasis.jpg" alt="Emphasis Principle" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 4.4: Emphasis Principle</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">4. Emphasis (Focal Point)</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">The creation of a focal point that draws the viewer’s attention first, making a specific element stand out from the rest of the design.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\pattern.jpg" alt="Pattern Principle" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 4.5: Pattern Principle</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">5. Pattern</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">The repeating of a specific object, shape, color, or visual element consistently throughout a composition.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\rhythm.jpg" alt="Rhythm Principle" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 4.6: Rhythm Principle</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">6. Rhythm</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A sense of organized movement or tempo created by the regular repetition or variation of design elements, establishing visual cadence.</p>
+                                </div>
+
+                            </div>
+                            <div style="margin-top: 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px; max-width: 400px; margin: 0 auto; width: 100%;">
+                                    <img src="C:\Users\63907\3D Objects\Website Animation\Images\Unity&Harmony.jpg" alt="Unity Principle" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                </div>
+                                <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 4.7: Unity Principle</p>
+                                <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem; text-align: center;">7. Unity and Harmony</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; text-align: center; max-width: 600px; margin: 0 auto;">The feeling of completeness and wholeness where all individual elements work together cohesively to support the overall design message.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="summary-content-view">
+                        <div class="summary-highlight-card">
+                            <span class="summary-badge"><i class="fa-solid fa-bolt"></i> Quick Summary</span>
+                            <ul class="summary-list">
+                                <li><strong>7 Principles of Design:</strong> Balance (distribution of visual weight), Contrast (juxtaposition of differing elements), Movement (guiding the viewer's eye), Emphasis (focal point creation), Pattern (consistent repetition), Rhythm (visual tempo/cadence), and Unity/Harmony (cohesive wholeness).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
                 <div class="lesson-panel" id="panel-lesson5">
-                    <span class="lesson-tag">Lesson 5</span>
-                    <h2>Image File Formats</h2>
-                    <p class="lesson-subtitle">Raster vs Vector Assets</p>
-                    <div class="lesson-body-text" style="margin-top: 1.5rem;">
-                        <h3>Raster vs. Vector Graphics</h3>
-                        <p>Compare pixel-based raster graphics (PNG, JPG, PSD) and resolution-independent vector graphics (SVG, AI). Learn how to optimize graphic assets for digital animation pipelines.</p>
-                    </div>
-                </div>
+                    
+                    <input type="radio" name="lesson5-view" id="l5-full" checked class="tool-radio">
+                    <input type="radio" name="lesson5-view" id="l5-summary" class="tool-radio">
 
-                <!-- LESSON 6 PANEL -->
+                    <div class="lesson-header-row">
+                        <div>
+                            <span class="lesson-tag">Lesson 5</span>
+                            <h2>Image File Formats & Graphics</h2>
+                            <p class="lesson-subtitle">Raster vs. Vector & Standard Image Formats</p>
+                        </div>
+                        <div class="view-toggle-container">
+                            <label for="l5-full" class="toggle-btn btn-full"><i class="fa-solid fa-file-lines"></i> Full Version</label>
+                            <label for="l5-summary" class="toggle-btn btn-summary"><i class="fa-solid fa-bolt"></i> Summarized</label>
+                        </div>
+                    </div>
+
+                    <div class="full-content-view">
+                        <div class="lesson-body-text">
+                            <h3>Raster vs. Vector Graphics</h3>
+                            <p>Understanding the fundamental difference between raster and vector graphics is essential in digital animation and graphic design:</p>
+                            
+                            <ul>
+                                <li><strong>Raster:</strong> It is made up of a grid of tiny pixels. When you stretch or enlarge it, it becomes blurry or pixelated (you can see the individual dots).</li>
+                                <li><strong>Vector:</strong> It is made up of mathematical formulas, lines, and curves. No matter how much you scale it up or down, it never loses quality or becomes blurry.</li>
+                            </ul>
+
+                            <h3 style="margin-top: 2.5rem;">Standard Image File Formats</h3>
+                            <p>Different image file formats serve specific purposes in asset creation and animation workflows. Here are the primary examples with dedicated visual containers:</p>
+
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
+                                
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 50%;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\JPEG_example.jpg" alt="JPEG Format" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 5.1: JPEG Raster Asset</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">1. .JPEG (Joint Photographic Experts Group)</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">It is a standard image format for containing lossy and compressed image data, widely used for photographs.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 50%;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\HEIC_example.jpg" alt="HEIC Format" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 5.2: HEIC Container Asset</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">2. .HEIC (High Efficiency File Format)</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A modern file format traditionally used by Apple devices for high-quality images with smaller file sizes.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 50%;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\PNG_example.png" alt="PNG Format" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 5.3: PNG Transparent Asset</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">3. .PNG (Portable Network Group)</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A lossless image format prized for supporting a transparent background and sharp graphical details.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 50%;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\GIF_example.gif" alt="GIF Format" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 5.4: GIF Animated Asset</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">4. .GIF (Graphic Interchange Format)</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">An image format widely recognized because it supports short looping animation sequences.</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="summary-content-view">
+                        <div class="summary-highlight-card">
+                            <span class="summary-badge"><i class="fa-solid fa-bolt"></i> Quick Summary</span>
+                            <ul class="summary-list">
+                                <li><strong>Raster Graphics:</strong> Made of pixel grids; becomes blurry or pixelated when stretched or enlarged.</li>
+                                <li><strong>Vector Graphics:</strong> Made of mathematical formulas and curves; never loses quality when scaled.</li>
+                                <li><strong>.JPEG:</strong> Joint Photographic Experts Group; standard format for compressed lossy images.</li>
+                                <li><strong>.HEIC:</strong> High Efficiency File Format; traditionally utilized by Apple devices.</li>
+                                <li><strong>.PNG:</strong> Portable Network Group; ideal for lossless compression and transparent backgrounds.</li>
+                                <li><strong>.GIF:</strong> Graphic Interchange Format; popular format that supports simple animations.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
                 <div class="lesson-panel" id="panel-lesson6">
-                    <span class="lesson-tag">Lesson 6</span>
-                    <h2>Camera Shots & Angles</h2>
-                    <p class="lesson-subtitle">Cinematic Framing & Storytelling</p>
-                    <div class="lesson-body-text" style="margin-top: 1.5rem;">
-                        <h3>Visual Storytelling & Framing</h3>
-                        <p>Understand camera angles (High Angle, Low Angle, Eye-Level, Bird's Eye View) and shot types (Extreme Close-Up, Close-Up, Medium Shot, Wide Shot) to build dynamic storyboards and cinematic scenes.</p>
-                    </div>
-                </div>
+                    
+                    <input type="radio" name="lesson6-view" id="l6-full" checked class="tool-radio">
+                    <input type="radio" name="lesson6-view" id="l6-summary" class="tool-radio">
 
-                <!-- LESSON 7 PANEL -->
-                <div class="lesson-panel" id="panel-lesson7">
-                    <span class="lesson-tag">Lesson 7</span>
-                    <h2>12 Principles</h2>
-                    <p class="lesson-subtitle">Squash & Stretch, Anticipation</p>
-                    <div class="lesson-body-text" style="margin-top: 1.5rem;">
-                        <h3>The 12 Principles of Animation</h3>
-                        <p>Study the classic principles of animation popularized by Disney animators: Squash & Stretch, Anticipation, Staging, Straight Ahead Action & Pose to Pose, Follow Through & Overlapping Action, Slow In & Slow Out, Arcs, Secondary Action, Timing, Exaggeration, Solid Drawing, and Appeal.</p>
+                    <div class="lesson-header-row">
+                        <div>
+                            <span class="lesson-tag">Lesson 6</span>
+                            <h2>Camera Shots, Angles & Movements</h2>
+                            <p class="lesson-subtitle">Cinematic Framing, Storyboards, and Visual Storytelling</p>
+                        </div>
+                        <div class="view-toggle-container">
+                            <label for="l6-full" class="toggle-btn btn-full"><i class="fa-solid fa-file-lines"></i> Full Version</label>
+                            <label for="l6-summary" class="toggle-btn btn-summary"><i class="fa-solid fa-bolt"></i> Summarized</label>
+                        </div>
                     </div>
+
+                    <div class="full-content-view">
+                        <div class="lesson-body-text">
+                            <h3>Introduction to Cinematic Framing</h3>
+                            <p><strong>Storyboard:</strong> A visual representation of a film sequence that breaks down the action into individual panels.</p>
+                            <p><strong>Framing Height:</strong> A guide for accurate cinematography and photography. A camera shot is considered the basic unit of film language.</p>
+
+                            <h3 style="margin-top: 2.5rem;">1. Camera Shots According to Size</h3>
+                            <p>Framing sizes determine how much of the subject and environment are visible in the frame.</p>
+
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
+                                
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\closeupshot.jpg" alt="Close-up Shot" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.1: Close-up Shot Example</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">Close-up Shot</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">Shows the actor from their shoulder up to their head, emphasizing facial expressions and emotion.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\mediumshot.jpg" alt="Medium Shot" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.2: Medium Shot Example</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">Medium Shot</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A type of camera shot that shows the subject from the waist up, balancing character interaction and environment.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\fullshot.jpg" alt="Full Shot" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.3: Full Shot Example</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">Full Shot</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">Reveals where your actor is positioned and displays the entire body of the character.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\longshot.jpg" alt="Long Shot" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.4: Long Shot Example</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">Long Shot</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">It is similar to the full shot but covers a much wider area, emphasizing the subject's environment.</p>
+                                </div>
+
+                            </div>
+
+
+                            <h3 style="margin-top: 2.5rem;">2. Camera Shots According to Position on the Screen</h3>
+                            <p>These shots define how subjects and scenes are structured in relation to context and narrative perspective.</p>
+
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
+                               
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\mastershot.jpg" alt="Master Shot" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.5: Master Shot Example</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">Master Shot</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">Keeps all the characters in view and shows the action of a scene from start to finish.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\establishingshot.jpg" alt="Establishing Shot" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.6: Establishing Shot Example</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">Establishing Shot</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A scene or shot that provides a clear overview of the setting and location.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\POVshot.jpg" alt="Point of View Shot" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.7: POV Shot Example</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">Point of View (POV) Shot</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A subjective shot that shows the scene precisely the way a character sees it.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\reactionshot.jpg" alt="Reaction Shot" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.8: Reaction Shot Example</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">Reaction Shot</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A camera shot focusing on a character's emotional reaction to something or someone.</p>
+                                </div>
+
+                            </div>
+
+                            <div style="margin-top: 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px; max-width: 400px; margin: 0 auto; width: 100%;">
+                                    <img src="C:\Users\63907\3D Objects\Website Animation\Images\OTSshot.jpg" alt="Over the Shoulder Shot" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                </div>
+                                <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.9: Over the Shoulder Shot Example</p>
+                                <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem; text-align: center;">Over the Shoulder Shot</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; text-align: center; max-width: 600px; margin: 0 auto;">Used to facilitate conversation and dialogue interaction between two persons.</p>
+                            </div>
+
+
+                            <h3 style="margin-top: 2.5rem;">3. Camera Shots According to Movement</h3>
+                            <p>Dynamic motion helps follow action and adds cinematic energy to scenes.</p>
+
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
+                                
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 150px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\trackingshot.jpg" alt="Tracking Shot" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.10: Tracking</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1rem;">Tracking Shot</h4>
+                                    <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">Also known as a “Traveling Shot.” A shot in which the camera moves alongside the action in a scene.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 150px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\panningshot.jpg" alt="Panning Shot" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.11: Panning</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1rem;">Panning Shot</h4>
+                                    <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">The horizontal (Left to Right) movement of a shot taken from a fixed camera location.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 150px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\tiltingshot.jpg" alt="Tilting Shot" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.12: Tilting</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1rem;">Tilting Shot</h4>
+                                    <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">The vertical (Up and Down) movement of a shot taken from a fixed camera location.</p>
+                                </div>
+
+                            </div>
+
+                            <h3 style="margin-top: 2.5rem;">4. Camera Shots According to Angle</h3>
+                            <p>Camera angles change the psychological perception of a character's power, status, or vulnerability.</p>
+
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1.5rem;">
+                                
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\highangleshot.jpg" alt="High Angle Shot" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img" onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.13: High Angle Example</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">High Angle Shot</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">Shot taken from above the subject with the camera directed downward, making the subject look smaller or vulnerable.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\lowangleshot.jpg" alt="Low Angle Shot" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img" onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.14: Low Angle Example</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">Low Angle Shot</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">The camera is placed below eye level, near the ground, and aimed upwards to capture the subject with power.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\eyeview.jpg" alt="Bird's Eye View" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img" onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.15: Bird's Eye View Example</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">Bird’s Eye View</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">A high angle shot taken to the extreme, as when shooting a street or layout directly from a top building.</p>
+                                </div>
+
+                                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                    <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px;">
+                                        <img src="C:\Users\63907\3D Objects\Website Animation\Images\weyeview.jpg" alt="Worm's Eye View" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img" onclick="openLightbox(this)">
+                                    </div>
+                                    <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.16: Worm's Eye View Example</p>
+                                    <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem;">Worm’s Eye View</h4>
+                                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">Usually done by setting the camera down directly to the floor level looking straight up.</p>
+                                </div>
+
+                            </div>
+
+                            <div style="margin-top: 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;">
+                                <div style="background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden; display: flex; justify-content: center; align-items: center; min-height: 180px; max-width: 400px; margin: 0 auto; width: 100%;">
+                                    <img src="C:\Users\63907\3D Objects\Website Animation\Images\cantedview.jpg" alt="Canted View" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;" class="gallery-img"  onclick="openLightbox(this)">
+                                </div>
+                                <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem; margin-bottom: 1rem;">Figure 6.17: Canted View Example</p>
+                                <h4 style="color: var(--secondary); margin-bottom: 0.4rem; font-size: 1.1rem; text-align: center;">Canted View (Dutch Angle)</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; text-align: center; max-width: 600px; margin: 0 auto;">If you want to add flavor or tension to your static shot, you can slant your camera to produce a canted shot.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="summary-content-view">
+                        <div class="summary-highlight-card">
+                            <span class="summary-badge"><i class="fa-solid fa-bolt"></i> Quick Summary</span>
+                            <ul class="summary-list">
+                                <li><strong>Storyboard & Framing:</strong> Visual breakdown of a film sequence; framing height serves as a guide for cinematography.</li>
+                                <li><strong>Shot Sizes:</strong> Close-up (shoulders up), Medium (waist up), Full (entire body/position), and Long Shot (wider area context).</li>
+                                <li><strong>Screen Position Shots:</strong> Master Shot (all characters/full action), Establishing Shot (overview of setting), POV Shot (character's perspective), Reaction Shot (emotional response), and Over-the-Shoulder (dialogue interaction).</li>
+                                <li><strong>Camera Movements:</strong> Tracking (moving with action), Panning (horizontal fixed movement), and Tilting (vertical fixed movement).</li>
+                                <li><strong>Camera Angles:</strong> High Angle (looking down), Low Angle (looking up), Bird’s Eye View (extreme overhead), Worm’s Eye View (ground level), and Canted View (slanted/Dutch angle for tension).</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
 
         </div>
-
-        <!-- FOOTER -->
         <footer>
             <p><strong>Solaris Ed - Senior High School Animation Learning Portal</strong></p>
             <p>Educational Purpose Only | Independent Student Project &copy; 2026</p>
         </footer>
 
     </div>
+
+
+ <!-- Lightbox Modal Component -->
+    <div id="lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="forceCloseLightbox()">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Expanded View">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+   <script src="js/theme_mode.js"></script>
 </body>
 </html>

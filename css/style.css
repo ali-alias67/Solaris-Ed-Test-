@@ -1,0 +1,2097 @@
+:root {
+    --bg-dark: #1e1b4b;          
+    --card-bg: rgba(255, 255, 255, 0.75); 
+    --card-border: #e2e8f0;       
+    --card-border-hover: #f56c6c; 
+    --hover-gray: #fdf2f2;        
+    --primary: #991b1b;          
+    --secondary: #d97706;        
+    --secondary-hover: #b45309;  
+    --text-main: #0f172a;        
+    --text-muted: #475569;       
+}
+
+/* ==========================================
+   GLOBAL RESET & BASE STYLES
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: radial-gradient(circle at top center, #fffbfa 0%, #f1f5f9 100%);
+    background-attachment: fixed;
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ==========================================
+   SIDEBAR & MAIN WRAPPER LAYOUT
+   ========================================== */
+.sidebar {
+    width: 260px;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.main-wrapper {
+    flex: 1;
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2rem;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    color: #f8fafc;
+}
+
+.menu-toggle-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.menu-toggle-label span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: var(--secondary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2.5rem;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #f8fafc;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    color: var(--secondary);
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 10px rgba(217, 119, 6, 0.5));
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+}
+
+nav a:hover, 
+nav a.active {
+    background: rgba(153, 27, 27, 0.15);
+    color: #fca5a5;
+    box-shadow: inset 0 0 12px rgba(153, 27, 27, 0.2);
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+    transform: translateX(-100%);
+}
+
+#sidebar-toggle:checked ~ .main-wrapper {
+    margin-left: 0;
+}
+
+/* ==========================================
+   THEME SWITCH BUTTON STYLING & ANIMATION
+   ========================================== */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #94a3b8;
+    user-select: none;
+}
+
+.theme-switch {
+    position: relative;
+    width: 46px;
+    height: 24px;
+    background: #334155;
+    border-radius: 12px;
+    padding: 2px;
+    transition: background 0.3s ease;
+}
+
+.theme-switch .slider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.theme-switch .slider i {
+    font-size: 10px;
+    position: absolute;
+    transition: opacity 0.2s ease;
+}
+
+.theme-switch .slider .fa-sun {
+    color: #f59e0b;
+    opacity: 0;
+}
+
+.theme-switch .slider .fa-moon {
+    color: #0f172a;
+    opacity: 1;
+}
+
+#theme-toggle:checked ~ .main-wrapper .theme-switch {
+    background: #fbbf24;
+}
+
+#theme-toggle:checked ~ .main-wrapper .theme-switch .slider {
+    transform: translateX(22px);
+}
+
+#theme-toggle:checked ~ .main-wrapper .theme-switch .slider .fa-sun {
+    opacity: 1;
+}
+
+#theme-toggle:checked ~ .main-wrapper .theme-switch .slider .fa-moon {
+    opacity: 0;
+}
+
+
+/* ==========================================
+   HOMEPAGE SPECIFIC STYLES (BANNER & HERO)
+   ========================================== */
+.portal-banner {
+    background: #0f172a;
+    border-bottom: 2px solid var(--secondary);
+    color: var(--secondary);
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hero {
+    padding: 3.5rem 1.5rem 2rem 1.5rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #991b1b 0%, #b45309 60%, #451a03 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1.75rem;
+    color: var(--text-muted);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.8rem 1.6rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(153, 27, 27, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background: #f06464;
+    box-shadow: 0 6px 20px rgba(153, 27, 27, 0.45);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    font-weight: 600;
+    padding: 0.8rem 1.6rem;
+    border-radius: 12px;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #ffffff;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Main Container Layout */
+.container {
+    max-width: 1100px;
+    margin: 1.5rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+    width: 100%;
+}
+
+.title-divider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.yellow-divider-line {
+    width: 100%;
+    max-width: 800px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--secondary) 50%, transparent 100%);
+    margin-bottom: 1.5rem;
+}
+
+.section-title-badge {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px);
+    border: 1.5px solid var(--secondary);
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15);
+}
+
+.section-title-badge h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   FEATURE CARDS GRID & ROUNDED CORNERS
+   ========================================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.card, .lessons-preview, .lesson-panel, .card-aguide, .category-detail-panel {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 20px !important;
+    padding: 1.75rem;
+    border: 1px solid var(--card-border);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.card h3 {
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.card-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.card:hover, .lessons-preview:hover {
+    transform: translateY(-5px);
+    background: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 10px 25px rgba(153, 27, 27, 0.12);
+}
+
+/* Homepage Dual Section */
+.home-dual-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: start;
+}
+
+.lessons-preview {
+    height: fit-content;
+}
+
+.curriculum-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+    margin-top: 1.25rem;
+    width: 100%;
+}
+
+.curriculum-list li {
+    width: 100%;
+}
+
+.curriculum-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.curriculum-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+    background: #ffffff;
+    box-shadow: 0 6px 15px rgba(153, 27, 27, 0.1);
+}
+
+.curriculum-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.curriculum-left i {
+    font-size: 1.15rem;
+    color: var(--secondary);
+}
+
+.curriculum-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.curriculum-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.curriculum-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #92400e;
+    background: rgba(217, 119, 6, 0.15);
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(217, 119, 6, 0.3);
+    white-space: nowrap;
+}
+
+/* ==========================================
+   LESSONS NAV BAR
+   ========================================== */
+.lesson-nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 auto 2rem auto;
+    padding: 0.5rem 0;
+    width: 100%;
+}
+
+.lesson-nav-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 0.75rem 1.15rem;
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lesson-nav-btn i {
+    color: var(--secondary);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.lesson-nav-btn:hover {
+    background: #ffffff;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(153, 27, 27, 0.15);
+}
+
+#tab-lesson1:checked ~ .lesson-nav-bar label[for="tab-lesson1"],
+#tab-lesson2:checked ~ .lesson-nav-bar label[for="tab-lesson2"],
+#tab-lesson3:checked ~ .lesson-nav-bar label[for="tab-lesson3"],
+#tab-lesson4:checked ~ .lesson-nav-bar label[for="tab-lesson4"],
+#tab-lesson5:checked ~ .lesson-nav-bar label[for="tab-lesson5"],
+#tab-lesson6:checked ~ .lesson-nav-bar label[for="tab-lesson6"],
+#tab-lesson7:checked ~ .lesson-nav-bar label[for="tab-lesson7"] {
+    background: var(--primary);
+    border-color: #7f1d1d;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(153, 27, 27, 0.3);
+}
+
+#theme-toggle:checked ~ .main-wrapper #tab-lesson1:checked ~ .lesson-nav-bar label[for="tab-lesson1"],
+#theme-toggle:checked ~ .main-wrapper #tab-lesson2:checked ~ .lesson-nav-bar label[for="tab-lesson2"],
+#theme-toggle:checked ~ .main-wrapper #tab-lesson3:checked ~ .lesson-nav-bar label[for="tab-lesson3"],
+#theme-toggle:checked ~ .main-wrapper #tab-lesson4:checked ~ .lesson-nav-bar label[for="tab-lesson4"],
+#theme-toggle:checked ~ .main-wrapper #tab-lesson5:checked ~ .lesson-nav-bar label[for="tab-lesson5"],
+#theme-toggle:checked ~ .main-wrapper #tab-lesson6:checked ~ .lesson-nav-bar label[for="tab-lesson6"],
+#theme-toggle:checked ~ .main-wrapper #tab-lesson7:checked ~ .lesson-nav-bar label[for="tab-lesson7"] {
+    background: #fbbf24 !important;
+    border-color: #d97706 !important;
+    color: #0f172a !important;
+}
+
+/* ==========================================
+   LESSON PANELS DISPLAY & BADGES
+   ========================================== */
+.lesson-panel {
+    display: none !important;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    margin-top: 1.0rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#tab-lesson1:checked ~ .lesson-content-display #panel-lesson1,
+#tab-lesson2:checked ~ .lesson-content-display #panel-lesson2,
+#tab-lesson3:checked ~ .lesson-content-display #panel-lesson3,
+#tab-lesson4:checked ~ .lesson-content-display #panel-lesson4,
+#tab-lesson5:checked ~ .lesson-content-display #panel-lesson5,
+#tab-lesson6:checked ~ .lesson-content-display #panel-lesson6,
+#tab-lesson7:checked ~ .lesson-content-display #panel-lesson7 {
+    display: block !important;
+}
+
+.lesson-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.view-toggle-container {
+    display: inline-flex;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 4px;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+}
+
+.toggle-btn {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
+}
+
+.toggle-btn:hover {
+    color: var(--text-main);
+}
+
+#l1-full:checked ~ .lesson-header-row .btn-full,
+#l1-summary:checked ~ .lesson-header-row .btn-summary,
+#l2-full:checked ~ .lesson-header-row .btn-full,
+#l2-summary:checked ~ .lesson-header-row .btn-summary,
+#l3-full:checked ~ .lesson-header-row .btn-full,
+#l3-summary:checked ~ .lesson-header-row .btn-summary,
+#l4-full:checked ~ .lesson-header-row .btn-full,
+#l4-summary:checked ~ .lesson-header-row .btn-summary,
+#l5-full:checked ~ .lesson-header-row .btn-full,
+#l5-summary:checked ~ .lesson-header-row .btn-summary,
+#l6-full:checked ~ .lesson-header-row .btn-full,
+#l6-summary:checked ~ .lesson-header-row .btn-summary,
+#l7-full:checked ~ .lesson-header-row .btn-full,
+#l7-summary:checked ~ .lesson-header-row .btn-summary {
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(153, 27, 27, 0.3);
+}
+
+.summary-content-view {
+    display: none;
+}
+
+#l1-summary:checked ~ .full-content-view,
+#l2-summary:checked ~ .full-content-view,
+#l3-summary:checked ~ .full-content-view,
+#l4-summary:checked ~ .full-content-view,
+#l5-summary:checked ~ .full-content-view,
+#l6-summary:checked ~ .full-content-view,
+#l7-summary:checked ~ .full-content-view {
+    display: none;
+}
+
+#l1-summary:checked ~ .summary-content-view,
+#l2-summary:checked ~ .summary-content-view,
+#l3-summary:checked ~ .summary-content-view,
+#l4-summary:checked ~ .summary-content-view,
+#l5-summary:checked ~ .summary-content-view,
+#l6-summary:checked ~ .summary-content-view,
+#l7-summary:checked ~ .summary-content-view {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.summary-highlight-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1.5px solid rgba(153, 27, 27, 0.3);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(153, 27, 27, 0.05);
+}
+
+.summary-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--primary);
+    background: rgba(153, 27, 27, 0.12);
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(153, 27, 27, 0.25);
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+}
+
+.summary-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.summary-list li {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 0.85rem 1.1rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--text-main);
+}
+
+.highlight-yellow {
+    color: #b45309;
+    font-weight: 700;
+}
+
+.welcome-box {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.welcome-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.lesson-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(153, 27, 27, 0.12);
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(153, 27, 27, 0.25);
+    margin-bottom: 0.5rem;
+}
+
+.lesson-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+.lesson-body-text h3 {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.lesson-body-text ul {
+    padding-left: 1.25rem;
+    color: var(--text-main);
+}
+
+.lesson-body-text li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.image-placeholder-box {
+    width: 100%;
+    min-height: 200px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px dashed rgba(153, 27, 27, 0.4);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1.25rem 0;
+    padding: 1.5rem;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.image-placeholder-box:hover {
+    border-color: var(--primary);
+    background: rgba(153, 27, 27, 0.05);
+}
+
+.placeholder-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+
+.image-placeholder-box p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* FOOTER */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: auto;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 900px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    .main-wrapper {
+        margin-left: 0;
+    }
+    #sidebar-toggle:checked ~ .sidebar {
+        transform: translateX(0);
+    }
+    .home-dual-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   SOFTWARE TOOLS HUB & GUIDE STYLES
+   ========================================== */
+.tool-radio {
+    display: none !important;
+}
+
+.tools-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .tools-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.category-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.category2-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.category-label:hover {
+    background: #ffffff;
+    border-color: var(--primary);
+}
+
+/* PAG-AAYOS SA MALIIT NA TEXT SA CATEGORY BUTTONS PARA MAGING READABLE */
+.category-label small, 
+.category-label p,
+.category-label div span {
+    color: #475569 !important;
+    font-weight: 500;
+}
+
+.category-detail-panel {
+    display: none !important;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px !important;
+    padding: 2rem;
+    backdrop-filter: blur(16px);
+}
+
+#cat-default:checked ~ .tools-layout #panel-default {
+    display: block !important;
+}
+
+#cat-pc:checked ~ .tools-layout #label-pc {
+    background: var(--primary);
+    border-color: #7f1d1d;
+    color: #ffffff;
+}
+
+/* Kapag naka-active o nakapindot, gawing puti ang maliit na text sa button */
+#cat-pc:checked ~ .tools-layout label[for="cat-pc"] small,
+#cat-mobile:checked ~ .tools-layout label[for="cat-mobile"] small {
+    color: #f1f5f9 !important;
+}
+
+#cat-pc:checked ~ .tools-layout #panel-pc {
+    display: block !important;
+}
+
+#cat-mobile:checked ~ .tools-layout #label-mobile {
+    background: var(--primary);
+    border-color: #7f1d1d;
+    color: #ffffff;
+}
+
+#cat-mobile:checked ~ .tools-layout #panel-mobile {
+    display: block !important;
+}
+
+.sub-tool-card {
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.2s ease;
+}
+
+.sub-tool-card:hover {
+    background: #ffffff;
+    border-color: var(--primary);
+}
+
+@media (max-width: 600px) {
+    .sub-tool-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.sub-tool-info {
+    flex: 1;
+}
+
+.category-detail-panel h3,
+.category-detail-panel h4,
+.sub-tool-info h4 {
+    color: #b45309 !important;
+    font-weight: 700;
+}
+
+.tool-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(153, 27, 27, 0.25);
+}
+
+.tool-action-btn:hover {
+    background: #b91c1c;
+}
+
+#tab-welcome:checked ~ .lesson-content-display #panel-welcome {
+    display: block !important;
+}
+
+#tab-lesson1:checked ~ .lesson-content-display #panel-welcome,
+#tab-lesson2:checked ~ .lesson-content-display #panel-welcome,
+#tab-lesson3:checked ~ .lesson-content-display #panel-welcome,
+#tab-lesson4:checked ~ .lesson-content-display #panel-welcome,
+#tab-lesson5:checked ~ .lesson-content-display #panel-welcome,
+#tab-lesson6:checked ~ .lesson-content-display #panel-welcome,
+#tab-lesson7:checked ~ .lesson-content-display #panel-welcome {
+    display: none !important;
+}
+
+/* Card Guide Container */
+.card-aguide {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-top: 4px solid var(--secondary);
+    border-radius: 20px !important;
+    padding: 2.5rem;
+    backdrop-filter: blur(16px);
+    margin-top: 1.0rem;
+    margin-bottom: 2rem;
+    display: block;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card-aguide h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.card-aguide .lesson-subtitle {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+}
+
+.card-aguide h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.card-aguide ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+}
+
+.card-aguide .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.card-aguide .faq-item {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid var(--card-border);
+}
+
+.card-aguide .faq-item h4 {
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.card-aguide .faq-item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ==========================================
+   CUSTOM DARK MODE (GALAXY THEMED & YELLOW ACCENTS)
+   ========================================== */
+#theme-toggle:checked ~ body,
+#theme-toggle:checked ~ .main-wrapper {
+    background: radial-gradient(circle at top center, #2e1065 0%, #0f172a 60%, #020617 100%) !important;
+    color: #f8fafc !important;
+    background-attachment: fixed !important;
+}
+
+/* Pagpapalit ng kulay ng mga Cards at Containers sa Dark Mode */
+#theme-toggle:checked ~ .main-wrapper .card,
+#theme-toggle:checked ~ .main-wrapper .lessons-preview,
+#theme-toggle:checked ~ .main-wrapper .lesson-panel,
+#theme-toggle:checked ~ .main-wrapper .card-aguide,
+#theme-toggle:checked ~ .main-wrapper .category-detail-panel,
+#theme-toggle:checked ~ .main-wrapper .category-label,
+#theme-toggle:checked ~ .main-wrapper .category2-label,
+#theme-toggle:checked ~ .main-wrapper .sub-tool-card,
+#theme-toggle:checked ~ .main-wrapper .faq-item {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(251, 191, 36, 0.3) !important;
+    color: #f8fafc !important;
+}
+
+/* Yellow/Gold Gradient Line sa itaas ng Cards sa Dark Mode */
+#theme-toggle:checked ~ .main-wrapper .card::before {
+    background: linear-gradient(90deg, #fbbf24, #d97706) !important;
+}
+
+/* Ginagawang White o Yellow ang mga dating itim na texts at headers sa Dark Mode */
+#theme-toggle:checked ~ .main-wrapper h1,
+#theme-toggle:checked ~ .main-wrapper h2,
+#theme-toggle:checked ~ .main-wrapper h3,
+#theme-toggle:checked ~ .main-wrapper h4,
+#theme-toggle:checked ~ .main-wrapper h5,
+#theme-toggle:checked ~ .main-wrapper h6,
+#theme-toggle:checked ~ .main-wrapper p,
+#theme-toggle:checked ~ .main-wrapper span,
+#theme-toggle:checked ~ .main-wrapper li,
+#theme-toggle:checked ~ .main-wrapper label,
+#theme-toggle:checked ~ .main-wrapper .card h3,
+#theme-toggle:checked ~ .main-wrapper .card p,
+#theme-toggle:checked ~ .main-wrapper .hero h1,
+#theme-toggle:checked ~ .main-wrapper .hero p,
+#theme-toggle:checked ~ .main-wrapper .curriculum-title,
+#theme-toggle:checked ~ .main-wrapper .curriculum-desc,
+#theme-toggle:checked ~ .main-wrapper .section-title-badge h2,
+#theme-toggle:checked ~ .main-wrapper .category-label small, 
+#theme-toggle:checked ~ .main-wrapper .category-label p,
+#theme-toggle:checked ~ .main-wrapper .card-aguide .lesson-subtitle,
+#theme-toggle:checked ~ .main-wrapper .card-aguide .faq-item p {
+    color: #f8fafc !important;
+}
+
+/* Mga Header na magiging Yellow o kaya ay magiging yellow kapag hinover */
+#theme-toggle:checked ~ .main-wrapper .hero h1,
+#theme-toggle:checked ~ .main-wrapper .section-title-badge h2,
+#theme-toggle:checked ~ .main-wrapper .category-detail-panel h3,
+#theme-toggle:checked ~ .main-wrapper .category-detail-panel h4,
+#theme-toggle:checked ~ .main-wrapper .sub-tool-info h4 {
+    color: #fbbf24 !important;
+}
+
+/* Hover effect para maging yellow/gold ang kulay at border kapag hinover ang cursor */
+#theme-toggle:checked ~ .main-wrapper .card:hover,
+#theme-toggle:checked ~ .main-wrapper .lessons-preview:hover,
+#theme-toggle:checked ~ .main-wrapper .curriculum-item:hover,
+#theme-toggle:checked ~ .main-wrapper .category-label:hover,
+#theme-toggle:checked ~ .main-wrapper .category2-label:hover,
+#theme-toggle:checked ~ .main-wrapper .sub-tool-card:hover {
+    border-color: #fbbf24 !important;
+    background: rgba(30, 41, 59, 0.95) !important;
+    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2) !important;
+    color: #fbbf24 !important;
+}
+
+#theme-toggle:checked ~ .main-wrapper .card:hover h3,
+#theme-toggle:checked ~ .main-wrapper .card:hover p,
+#theme-toggle:checked ~ .main-wrapper .curriculum-item:hover .curriculum-title {
+    color: #fbbf24 !important;
+}
+
+/* Primary Buttons at Links maging Yellow na may Dark Text para madaling basahin */
+#theme-toggle:checked ~ .main-wrapper .btn-primary,
+#theme-toggle:checked ~ .main-wrapper .tool-action-btn {
+    background: #fbbf24 !important;
+    color: #0f172a !important;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4) !important;
+}
+
+#theme-toggle:checked ~ .main-wrapper .btn-primary:hover,
+#theme-toggle:checked ~ .main-wrapper .tool-action-btn:hover {
+    background: #f59e0b !important;
+    color: #0f172a !important;
+}
+
+#theme-toggle:checked ~ .main-wrapper .card-link,
+#theme-toggle:checked ~ .main-wrapper .curriculum-left i {
+    color: #fbbf24 !important;
+}
+
+#theme-toggle:checked ~ .main-wrapper .yellow-divider-line {
+    background: linear-gradient(90deg, transparent 0%, #fbbf24 50%, transparent 100%) !important;
+}
+
+#theme-toggle:checked ~ .main-wrapper .section-title-badge {
+    border-color: #fbbf24 !important;
+    background: rgba(15, 23, 42, 0.9) !important;
+}
+
+/* ==========================================
+   THEME SWITCH BUTTON STYLING & ANIMATION
+   ========================================== */
+.sidebar-footer {
+    width: 100%;
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #94a3b8;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.theme-switch-wrapper:hover {
+    color: #f8fafc;
+}
+
+/* Base Pill Track */
+.theme-switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background: #334155; /* Default Gray-Blue Track */
+    border-radius: 15px;
+    padding: 3px;
+    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Sliding Knob/Circle */
+.theme-switch .slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Smooth sliding spring-like animation */
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Icon Styles Inside Slider */
+.theme-switch .slider i {
+    font-size: 11px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Light Mode: Naka-focus sa Sun (Sun Icon Active) */
+.theme-switch .slider .fa-sun {
+    color: #d97706; /* Vibrant Sun Gold */
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.theme-switch .slider .fa-moon {
+    color: #1e1b4b;
+    opacity: 0;
+    transform: scale(0.5) rotate(-90deg);
+}
+
+/* ==========================================
+   WHEN TOGGLED / CHECKED (DARK MODE ACTIVE)
+   ========================================== */
+/* Track background becomes Gold/Yellow on Dark Mode */
+#theme-toggle:checked ~ .main-wrapper .theme-switch,
+#theme-toggle:checked ~ .sidebar .theme-switch {
+    background: #d97706;
+}
+
+/* Slider moves to the right */
+#theme-toggle:checked ~ .main-wrapper .theme-switch .slider,
+#theme-toggle:checked ~ .sidebar .theme-switch .slider {
+    transform: translateX(24px);
+    background: #0f172a; /* Dark Knob */
+}
+
+/* Switch to Moon Icon */
+#theme-toggle:checked ~ .main-wrapper .theme-switch .slider .fa-sun,
+#theme-toggle:checked ~ .sidebar .theme-switch .slider .fa-sun {
+    opacity: 0;
+    transform: scale(0.5) rotate(90deg);
+}
+
+#theme-toggle:checked ~ .main-wrapper .theme-switch .slider .fa-moon,
+#theme-toggle:checked ~ .sidebar .theme-switch .slider .fa-moon {
+    color: #fbbf24; /* Glowing Yellow Moon */
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+/* ==========================================
+   SMOOTH TOGGLE BUTTON ANIMATION
+   ========================================== */
+.sidebar-footer {
+    width: 100%;
+}
+
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #94a3b8;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.theme-switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+    background: #334155;
+    border-radius: 15px;
+    padding: 3px;
+    transition: background 0.4s ease;
+}
+
+.theme-switch .slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.theme-switch .slider i {
+    font-size: 11px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-switch .slider .fa-sun {
+    color: #d97706;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.theme-switch .slider .fa-moon {
+    color: #1e1b4b;
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+/* PAG NAKA-CHECK O NAKA-DARK MODE */
+#theme-toggle:checked + .theme-switch-wrapper .theme-switch {
+    background: #d97706;
+}
+
+#theme-toggle:checked + .theme-switch-wrapper .theme-switch .slider {
+    transform: translateX(24px);
+    background: #0f172a;
+}
+
+#theme-toggle:checked + .theme-switch-wrapper .theme-switch .slider .fa-sun {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+#theme-toggle:checked + .theme-switch-wrapper .theme-switch .slider .fa-moon {
+    color: #fbbf24;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ==========================================
+   CUSTOM DARK MODE (GALAXY THEMED & YELLOW ACCENTS)
+   ========================================== */
+body.dark-mode,
+body.dark-mode .main-wrapper {
+    background: radial-gradient(circle at top center, #2e1065 0%, #0f172a 60%, #020617 100%) !important;
+    color: #f8fafc !important;
+    background-attachment: fixed !important;
+}
+
+body.dark-mode .main-wrapper .card,
+body.dark-mode .main-wrapper .lessons-preview,
+body.dark-mode .main-wrapper .lesson-panel,
+body.dark-mode .main-wrapper .card-aguide,
+body.dark-mode .main-wrapper .category-detail-panel,
+body.dark-mode .main-wrapper .category-label,
+body.dark-mode .main-wrapper .category2-label,
+body.dark-mode .main-wrapper .sub-tool-card,
+body.dark-mode .main-wrapper .faq-item {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border: 1px solid rgba(251, 191, 36, 0.3) !important;
+    color: #f8fafc !important;
+}
+
+body.dark-mode .main-wrapper .card::before {
+    background: linear-gradient(90deg, #fbbf24, #d97706) !important;
+}
+
+body.dark-mode .main-wrapper h1,
+body.dark-mode .main-wrapper h2,
+body.dark-mode .main-wrapper h3,
+body.dark-mode .main-wrapper h4,
+body.dark-mode .main-wrapper h5,
+body.dark-mode .main-wrapper h6,
+body.dark-mode .main-wrapper p,
+body.dark-mode .main-wrapper span,
+body.dark-mode .main-wrapper li,
+body.dark-mode .main-wrapper label,
+body.dark-mode .main-wrapper .card h3,
+body.dark-mode .main-wrapper .card p,
+body.dark-mode .main-wrapper .curriculum-title,
+body.dark-mode .main-wrapper .curriculum-desc,
+body.dark-mode .main-wrapper .category-label small, 
+body.dark-mode .main-wrapper .category-label p,
+body.dark-mode .main-wrapper .card-aguide .lesson-subtitle,
+body.dark-mode .main-wrapper .card-aguide .faq-item p {
+    color: #f8fafc !important;
+}
+
+body.dark-mode .main-wrapper .hero h1,
+body.dark-mode .main-wrapper .section-title-badge h2,
+body.dark-mode .main-wrapper .category-detail-panel h3,
+body.dark-mode .main-wrapper .category-detail-panel h4,
+body.dark-mode .main-wrapper .sub-tool-info h4 {
+    color: #fbbf24 !important;
+}
+
+body.dark-mode .main-wrapper .card:hover,
+body.dark-mode .main-wrapper .lessons-preview:hover,
+body.dark-mode .main-wrapper .curriculum-item:hover,
+body.dark-mode .main-wrapper .category-label:hover,
+body.dark-mode .main-wrapper .category2-label:hover,
+body.dark-mode .main-wrapper .sub-tool-card:hover {
+    border-color: #fbbf24 !important;
+    background: rgba(30, 41, 59, 0.95) !important;
+    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2) !important;
+    color: #fbbf24 !important;
+}
+
+body.dark-mode .main-wrapper .card:hover h3,
+body.dark-mode .main-wrapper .card:hover p,
+body.dark-mode .main-wrapper .curriculum-item:hover .curriculum-title {
+    color: #fbbf24 !important;
+}
+
+body.dark-mode .main-wrapper .btn-primary,
+body.dark-mode .main-wrapper .tool-action-btn {
+    background: #fbbf24 !important;
+    color: #0f172a !important;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4) !important;
+}
+
+body.dark-mode .main-wrapper .btn-primary:hover,
+body.dark-mode .main-wrapper .tool-action-btn:hover {
+    background: #f59e0b !important;
+    color: #0f172a !important;
+}
+
+body.dark-mode .main-wrapper .card-link,
+body.dark-mode .main-wrapper .curriculum-left i {
+    color: #fbbf24 !important;
+}
+
+body.dark-mode .main-wrapper .yellow-divider-line {
+    background: linear-gradient(90deg, transparent 0%, #fbbf24 50%, transparent 100%) !important;
+}
+
+body.dark-mode .main-wrapper .section-title-badge {
+    border-color: #fbbf24 !important;
+    background: rgba(15, 23, 42, 0.9) !important;
+}
+
+/* Sun Gradient Title sa Hero Section kapag naka-Dark Mode */
+body.dark-mode .main-wrapper .hero h1 {
+    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    display: inline-block;
+    filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.3)); /* Soft warm glow */
+}
+
+/* ==========================================
+   DARK MODE MATCHING ACCENTS (SUN GRADIENT)
+   ========================================== */
+
+/* 1. Logo Icon at Salitang "Ed" sa Dark Mode */
+body.dark-mode .sidebar .logo i,
+body.dark-mode .sidebar .logo span {
+    background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.4));
+}
+
+/* 2. Hamburger Menu Icon (Tatlong Linya sa Top Bar) */
+body.dark-mode .menu-toggle-label span {
+    background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%) !important;
+    box-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+}
+
+/* 3. Sidebar Navigation Links Hover & Active State */
+body.dark-mode .sidebar nav a:hover,
+body.dark-mode .sidebar nav a.active {
+    background: rgba(251, 191, 36, 0.12) !important;
+    color: #fbbf24 !important;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    box-shadow: inset 0 0 12px rgba(251, 191, 36, 0.15), 0 0 10px rgba(251, 191, 36, 0.2) !important;
+}
+
+/* Hover effect para sa icons sa loob ng nav links */
+body.dark-mode .sidebar nav a:hover i,
+body.dark-mode .sidebar nav a.active i {
+    color: #fbbf24 !important;
+    filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.6));
+}
+
+/* ==========================================
+   CURRICULUM ITEMS DARK MODE: WHITE TEXT TO YELLOW ON HOVER
+   ========================================== */
+
+/* 1. Background at Border ng Curriculum Item sa Dark Mode */
+body.dark-mode .main-wrapper .curriculum-item {
+    background: rgba(15, 23, 42, 0.75) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 2. Default na kulay ay Puti (White) para sa mga text at icon kapag naka-Dark Mode */
+body.dark-mode .main-wrapper .curriculum-item .curriculum-title,
+body.dark-mode .main-wrapper .curriculum-item .curriculum-desc,
+body.dark-mode .main-wrapper .curriculum-item .curriculum-left i {
+    color: #ffffff !important; /* Puti na ang default text at icon color */
+    transition: all 0.3s ease;
+}
+
+/* 3. Kapag hinover o pinindot, magiging Yellow/Gold ang kulay at border */
+body.dark-mode .main-wrapper .curriculum-item:hover,
+body.dark-mode .main-wrapper .curriculum-item:active {
+    background: rgba(30, 41, 59, 0.95) !important;
+    border-color: #fbbf24 !important;
+    box-shadow: 0 6px 15px rgba(251, 191, 36, 0.25) !important;
+}
+
+body.dark-mode .main-wrapper .curriculum-item:hover .curriculum-title,
+body.dark-mode .main-wrapper .curriculum-item:active .curriculum-title,
+body.dark-mode .main-wrapper .curriculum-item:hover .curriculum-left i,
+body.dark-mode .main-wrapper .curriculum-item:active .curriculum-left i {
+    color: #fbbf24 !important; /* Maging Yellow kapag hinover o pinindot */
+    filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.5));
+}
+
+/* ==========================================
+   ULTIMATE SHAKE KILLER SA DARK MODE
+   ========================================== */
+body.dark-mode .sidebar nav a,
+body.dark-mode .sidebar nav a:hover,
+body.dark-mode .sidebar nav a:active,
+body.dark-mode .sidebar nav a:focus,
+body.dark-mode .main-wrapper .curriculum-item,
+body.dark-mode .main-wrapper .curriculum-item:hover,
+body.dark-mode .main-wrapper .curriculum-item:active,
+body.dark-mode .main-wrapper .card,
+body.dark-mode .main-wrapper .card:hover {
+    transform: none !important;
+    translate: 0 0 !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* ==========================================
+   FEATURED TOOL / QUIZLET CARD STYLE (Gaya ng Larawan)
+   ========================================== */
+.featured-tool-card {
+    max-width: 750px;
+    margin: 0 auto 3rem auto;
+    background: #ffffff;
+    border-radius: 16px;
+    border-top: 6px solid #d97706; /* Gradient-like top border accent */
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dashed Inner Box */
+.card-dashed-box {
+    border: 2px dashed rgba(217, 119, 6, 0.4);
+    border-radius: 12px;
+    padding: 2rem 1rem;
+    text-align: center;
+    background: #f8fafc;
+    margin-bottom: 1.5rem;
+}
+
+.quizlet-main-icon {
+    font-size: 3rem;
+    color: #d97706;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.card-banner-title {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 1px;
+}
+
+.card-banner-sub {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+
+/* Card Info Section */
+.card-info-section h3 {
+    font-size: 1.15rem;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-info-section h3 i {
+    color: #d97706;
+}
+
+.card-info-section p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 1.25rem;
+}
+
+/* Learn More / Quizlet Link Button */
+.card-learn-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #d97706;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.card-learn-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.card-learn-more-btn:hover {
+    color: #b45309;
+}
+
+.card-learn-more-btn:hover i {
+    transform: translateX(4px); /* Gumagalaw pakanan ang arrow kapag hinover */
+}
+
+/* ==========================================
+   DARK MODE OVERRIDES PARA SA FEATURED CARD
+   ========================================== */
+body.dark-mode .featured-tool-card {
+    background: rgba(15, 23, 42, 0.85) !important;
+    border-top: 6px solid #fbbf24 !important;
+    border-left: 1px solid rgba(251, 191, 36, 0.2) !important;
+    border-right: 1px solid rgba(251, 191, 36, 0.2) !important;
+    border-bottom: 1px solid rgba(251, 191, 36, 0.2) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(251, 191, 36, 0.1) !important;
+}
+
+body.dark-mode .card-dashed-box {
+    background: rgba(30, 41, 59, 0.5) !important;
+    border-color: rgba(251, 191, 36, 0.3) !important;
+}
+
+body.dark-mode .quizlet-main-icon {
+    color: #fbbf24 !important;
+}
+
+body.dark-mode .card-banner-title {
+    color: #f8fafc !important;
+}
+
+body.dark-mode .card-banner-sub {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .card-info-section h3 {
+    color: #f8fafc !important;
+}
+
+body.dark-mode .card-info-section h3 i,
+body.dark-mode .card-learn-more-btn {
+    color: #fbbf24 !important;
+}
+
+body.dark-mode .card-info-section p {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .card-learn-more-btn:hover {
+    color: #f59e0b !important;
+}
+
+/* ==========================================
+   FIX ACTIVE/SELECTED LESSON BUTTONS SA DARK MODE (MIGING YELLOW)
+   ========================================== */
+
+/* Kapag ang lesson nav button sa taas ay naka-active/selected habang naka-dark mode */
+body.dark-mode input[id^="tab-"]:checked + .lesson-nav-btn,
+body.dark-mode .lesson-nav-btn:active,
+body.dark-mode .lesson-nav-btn:hover {
+    background: #fbbf24 !important;
+    color: #0f172a !important;
+    border-color: #fbbf24 !important;
+    transform: none !important;
+    translate: 0 0 !important;
+}
+
+/* Kapag ang Full Version / Summarized button ay naka-active habang naka-dark mode */
+body.dark-mode input[type="radio"]:checked + .toggle-btn,
+body.dark-mode .toggle-btn:active,
+body.dark-mode .toggle-btn:hover {
+    background: #fbbf24 !important;
+    color: #0f172a !important;
+    border-color: #fbbf24 !important;
+    transform: none !important;
+    translate: 0 0 !important;
+}
+
+/* Siguraduhing yellow rin ang mga icon sa loob ng active buttons */
+body.dark-mode input[id^="tab-"]:checked + .lesson-nav-btn i,
+body.dark-mode input[type="radio"]:checked + .toggle-btn i {
+    color: #0f172a !important;
+}
+
+/* ==========================================
+   DARK MODE: BORDER LANG KAPAG HOVER, YELLOW BUO KAPAG SELECTED
+   ========================================== */
+
+/* 1. Default Unselected State: Madilim na background at normal border */
+body.dark-mode .lesson-nav-bar .lesson-nav-btn,
+body.dark-mode .view-toggle-container .toggle-btn {
+    background: rgba(30, 41, 59, 0.8) !important;
+    color: #94a3b8 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    transform: none !important;
+    translate: 0 0 !important;
+}
+
+body.dark-mode .lesson-nav-bar .lesson-nav-btn i,
+body.dark-mode .view-toggle-container .toggle-btn i {
+    color: #94a3b8 !important;
+}
+
+/* 2. HOVER / HIGHLIGHTED STATE: Border lang ang magiging yellow, dark pa rin ang background */
+body.dark-mode .lesson-nav-bar .lesson-nav-btn:hover,
+body.dark-mode .view-toggle-container .toggle-btn:hover {
+    background: rgba(30, 41, 59, 0.8) !important;
+    color: #f8fafc !important;
+    border-color: #fbbf24 !important;
+}
+
+body.dark-mode .lesson-nav-bar .lesson-nav-btn:hover i,
+body.dark-mode .view-toggle-container .toggle-btn:hover i {
+    color: #fbbf24 !important;
+}
+
+/* 3. SELECTED STATE: Buong background ay magiging yellow para sa Lesson Nav Buttons */
+body.dark-mode input#tab-lesson1:checked ~ .lesson-nav-bar label[for="tab-lesson1"],
+body.dark-mode input#tab-lesson2:checked ~ .lesson-nav-bar label[for="tab-lesson2"],
+body.dark-mode input#tab-lesson3:checked ~ .lesson-nav-bar label[for="tab-lesson3"],
+body.dark-mode input#tab-lesson4:checked ~ .lesson-nav-bar label[for="tab-lesson4"],
+body.dark-mode input#tab-lesson5:checked ~ .lesson-nav-bar label[for="tab-lesson5"],
+body.dark-mode input#tab-lesson6:checked ~ .lesson-nav-bar label[for="tab-lesson6"],
+body.dark-mode input#tab-lesson7:checked ~ .lesson-nav-bar label[for="tab-lesson7"] {
+    background: #fbbf24 !important;
+    color: #0f172a !important;
+    border-color: #fbbf24 !important;
+}
+
+body.dark-mode input#tab-lesson1:checked ~ .lesson-nav-bar label[for="tab-lesson1"] i,
+body.dark-mode input#tab-lesson2:checked ~ .lesson-nav-bar label[for="tab-lesson2"] i,
+body.dark-mode input#tab-lesson3:checked ~ .lesson-nav-bar label[for="tab-lesson3"] i,
+body.dark-mode input#tab-lesson4:checked ~ .lesson-nav-bar label[for="tab-lesson4"] i,
+body.dark-mode input#tab-lesson5:checked ~ .lesson-nav-bar label[for="tab-lesson5"] i,
+body.dark-mode input#tab-lesson6:checked ~ .lesson-nav-bar label[for="tab-lesson6"] i,
+body.dark-mode input#tab-lesson7:checked ~ .lesson-nav-bar label[for="tab-lesson7"] i {
+    color: #0f172a !important;
+}
+
+/* 4. SELECTED STATE: Buong background ay magiging yellow para sa View Toggle Buttons (Full Version / Summarized) */
+body.dark-mode input[id$="-full"]:checked ~ .lesson-header-row .btn-full,
+body.dark-mode input[id$="-summary"]:checked ~ .lesson-header-row .btn-summary {
+    background: #fbbf24 !important;
+    color: #0f172a !important;
+    border-color: #fbbf24 !important;
+}
+
+body.dark-mode input[id$="-full"]:checked ~ .lesson-header-row .btn-full i,
+body.dark-mode input[id$="-summary"]:checked ~ .lesson-header-row .btn-summary i {
+    color: #0f172a !important;
+}
+
+/* ==========================================
+   FIX: GRADIENT LINE NA LUMALAGPAS SA CARD
+   ========================================== */
+
+.featured-tool-card {
+    position: relative;
+    overflow: hidden; /* Pinipigilan nitong lumabas ang anuman sa loob o linya sa gilid */
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Eksaktong pagsukat sa linya sa itaas para hindi lumagpas */
+.featured-tool-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #d97706, #fbbf24) !important;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    z-index: 1; /* Sinisigurong nasa ibabaw ito ng card background */
+}
+
+/* Hover state: Gilid lang ang magiging pula, gradient pa rin ang itaas */
+.featured-tool-card:hover {
+    border-color: #dc2626 !important;
+    box-shadow: 0 12px 35px rgba(220, 38, 38, 0.15) !important;
+    transform: none !important;
+    translate: 0 0 !important;
+}
+
+.featured-tool-card:hover::before {
+    background: linear-gradient(90deg, #d97706, #fbbf24) !important;
+}
+
+/* Dark Mode support */
+body.dark-mode .featured-tool-card:hover {
+    border-color: #dc2626 !important;
+    box-shadow: 0 12px 35px rgba(220, 38, 38, 0.25) !important;
+}
+
+body.dark-mode .featured-tool-card:hover::before {
+    background: linear-gradient(90deg, #d97706, #fbbf24) !important;
+}
+
+/* ==========================================
+   QUIZ CARD HOVER FIX: RED SA LIGHT MODE, YELLOW SA DARK MODE
+   ========================================== */
+
+/* 1. Default State ng Quiz Card */
+.featured-tool-card {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    border-radius: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Gradient Line sa Itaas (Permanente at hindi nagbabago) */
+.featured-tool-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #d97706, #fbbf24) !important;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+/* 2. LIGHT MODE HOVER: Pula ang border kapag hinover */
+.featured-tool-card:hover {
+    border-color: #dc2626 !important;
+    box-shadow: 0 12px 35px rgba(220, 38, 38, 0.15) !important;
+    transform: none !important;
+    translate: 0 0 !important;
+}
+
+.featured-tool-card:hover::before {
+    background: linear-gradient(90deg, #d97706, #fbbf24) !important;
+}
+
+/* 3. DARK MODE HOVER: Yellow/Gold naman ang magiging border kapag hinover */
+body.dark-mode .featured-tool-card:hover {
+    border-color: #fbbf24 !important;
+    box-shadow: 0 12px 35px rgba(251, 191, 36, 0.25) !important;
+}
+
+body.dark-mode .featured-tool-card:hover::before {
+    background: linear-gradient(90deg, #d97706, #fbbf24) !important;
+}
+
+/* ==========================================
+   DARK MODE FIX: QUICK SUMMARY BOX & ACCENT CARDS
+   ========================================== */
+
+/* 1. Background ng mismong malaking Quick Summary container box kapag Dark Mode */
+body.dark-mode .summary-highlight-card,
+body.dark-mode .summary-content-view {
+    background: rgba(15, 23, 42, 0.75) !important;
+    border: 1px solid rgba(251, 191, 36, 0.15) !important;
+}
+
+/* 2. Background at Border ng mga individual accent cards sa loob kapag Dark Mode */
+body.dark-mode .summary-list li,
+body.dark-mode .summary-content-view li {
+    background: rgba(30, 41, 59, 0.85) !important; /* Ginawang madilim (dark slate) */
+    color: #cbd5e1 !important;
+    border-left: 4px solid #fbbf24 !important; /* Pinalitan ng Orange/Yellow ang pulang linya sa kaliwa */
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 3. Kulay ng mga teksto at bold words sa loob ng cards para madaling basahin */
+body.dark-mode .summary-list li strong,
+body.dark-mode .summary-content-view li strong {
+    color: #f8fafc !important;
+}
+
+/* 4. Quick Summary Badge sa itaas */
+body.dark-mode .summary-badge,
+body.dark-mode .summary-highlight-card .summary-badge {
+    background: rgba(251, 191, 36, 0.15) !important;
+    color: #fbbf24 !important;
+    border: 1px solid rgba(251, 191, 36, 0.3) !important;
+}
+
+/* ==========================================
+   PERFECT FIT: DARK MODE SUMMARY SPACING FIX
+   ========================================== */
+
+/* 1. Ang main container box lang ang magiging dark */
+body.dark-mode .summary-highlight-card,
+body.dark-mode .summary-content-view {
+    background: rgba(15, 23, 42, 0.75) !important;
+    border: 1px solid rgba(251, 191, 36, 0.2) !important;
+}
+
+/* 2. Tanggalin ang background at box properties sa bawat list item 
+      para HINDI magbago ang padding, height, at spacing */
+body.dark-mode .summary-list li,
+body.dark-mode .summary-content-view li {
+    background: transparent !important; /* Walang dark box sa paligid ng bawat item */
+    box-shadow: none !important;
+    border-left-color: #fbbf24 !important; /* Yellow/Orange linya lang sa kaliwa */
+    color: #cbd5e1 !important;
+}
+
+/* 3. Kulay ng bold header sa loob ng list items */
+body.dark-mode .summary-list li strong,
+body.dark-mode .summary-content-view li strong {
+    color: #f8fafc !important;
+}
+
+/* 4. Quick Summary Badge sa itaas */
+body.dark-mode .summary-badge,
+body.dark-mode .summary-highlight-card .summary-badge {
+    background: rgba(251, 191, 36, 0.15) !important;
+    color: #fbbf24 !important;
+    border: 1px solid rgba(251, 191, 36, 0.3) !important;
+}
+
+/* ==========================================
+   PERFECT HEIGHT & SPACING MATCH (DARK MODE)
+   ========================================== */
+
+/* 1. Main container box lang ang lalagyan ng dark background at border */
+body.dark-mode .summary-highlight-card,
+body.dark-mode .summary-content-view {
+    background: rgba(15, 23, 42, 0.75) !important;
+    border: 1px solid rgba(251, 191, 36, 0.2) !important;
+}
+
+/* 2. List Items: Walang ekstrang borders para hindi tumaas ang height */
+body.dark-mode .summary-list li,
+body.dark-mode .summary-content-view li {
+    background: transparent !important;
+    box-shadow: none !important;
+    
+    /* Pinalitan lang ang kulay ng linya sa kaliwa papuntang Yellow/Orange */
+    border-left-color: #fbbf24 !important; 
+    
+    /* Tinatanggal ang 1px border sa taas, kanan, at ilalim para HINDI tumaas ang height */
+    border-top: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    
+    color: #cbd5e1 !important;
+}
+
+/* 3. Kulay ng bold text */
+body.dark-mode .summary-list li strong,
+body.dark-mode .summary-content-view li strong {
+    color: #f8fafc !important;
+}
+
+/* 4. Quick Summary Badge Styling */
+body.dark-mode .summary-badge,
+body.dark-mode .summary-highlight-card .summary-badge {
+    background: rgba(251, 191, 36, 0.15) !important;
+    color: #fbbf24 !important;
+    border: 1px solid rgba(251, 191, 36, 0.3) !important;
+}
+
+/* ==========================================
+   DARK MODE ROUNDED EDGES FIX
+   ========================================== */
+
+/* Ibinabalik at nilo-lock ang rounded corners sa dark mode para hindi maging pointy */
+body.dark-mode .summary-highlight-card,
+body.dark-mode .summary-content-view,
+body.dark-mode .featured-tool-card {
+    border-radius: 16px !important;
+}
+
+/* Para naman sa mga list items o accent cards sa loob kung meron mang rounded edges */
+body.dark-mode .summary-list li,
+body.dark-mode .summary-content-view li {
+    border-radius: 8px !important;
+}
+
+/* ==========================================
+   FIX: LESSON BADGE COLOR SWITCHING
+   ========================================== */
+
+/* 1. Light Mode para sa Badge */
+.lesson-badge, 
+.content-badge, 
+.lesson-tag {
+    background-color: #f1f5f9 !important;
+    color: #475569 !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 2. Dark Mode para sa Badge (Magiging dark slate at yellow/orange text) */
+body.dark-mode .lesson-badge, 
+body.dark-mode .content-badge, 
+body.dark-mode .lesson-tag {
+    background-color: rgba(30, 41, 59, 0.85) !important;
+    color: #fbbf24 !important;
+    border: 1px solid rgba(251, 191, 36, 0.25) !important;
+}
+
+/* Kapag nag-hover sa category label */
+.category-label:hover {
+    background-color: var(--secondary) !important;
+    color: #111 !important;
+    border-color: var(--secondary) !important;
+}
+
+/* Kapag napili o naka-select na ang PC category */
+#cat-pc:checked ~ .tools-layout .tools-sidebar #label-pc {
+    background-color: var(--secondary) !important;
+    color: #111 !important;
+    border-color: var(--secondary) !important;
+}
+
+/* Kapag napili o naka-select na ang Mobile category */
+#cat-mobile:checked ~ .tools-layout .tools-sidebar #label-mobile {
+    background-color: var(--secondary) !important;
+    color: #111 !important;
+    border-color: var(--secondary) !important;
+}
+
+/* Para masiguradong magiging dark din ang icon kapag yellow na ang background */
+.category-label:hover i,
+#cat-pc:checked ~ .tools-layout .tools-sidebar #label-pc i,
+#cat-mobile:checked ~ .tools-layout .tools-sidebar #label-mobile i {
+    color: #111 !important;
+}

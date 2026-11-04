@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="C:/Users/63907/3D Objects/Website Animation/Images/solaris_logo.png" rel="shortcut icon">
     <title>Solaris Ed - Software Tools</title>
-    <!-- Font Awesome Icons CDN -->
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Pure CSS Sidebar Toggle Checkbox -->
     <input type="checkbox" id="sidebar-toggle" style="display: none;">
 
-    <!-- SIDEBAR NAVIGATION -->
     <aside class="sidebar">
         <div>
             <div class="logo-container">
@@ -25,6 +23,7 @@
                 <ul>
                     <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a href="lessons.html"><i class="fa-solid fa-book-open"></i> Lessons</a></li>
+                    <li><a href="Quiz.html"><i class="fa-solid fa-brain"></i> Quiz & Assessment</a></li>
                     <li><a href="guide.html"><i class="fa-solid fa-compass"></i> Student Guide</a></li>
                     <li><a href="gallery.html"><i class="fa-solid fa-photo-film"></i> Showcase Gallery</a></li>
                     <li><a href="tools.html" class="active"><i class="fa-solid fa-laptop-code"></i> Software Tools</a></li>
@@ -32,12 +31,23 @@
                 </ul>
             </nav>
         </div>
+
+        <div class="sidebar-footer" style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+            <input type="checkbox" id="theme-toggle" style="display: none;" onchange="saveThemePreference()">
+            <label for="theme-toggle" class="theme-switch-wrapper">
+                <div class="theme-switch">
+                    <div class="slider">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+                <span class="theme-label-text">Dark Mode</span>
+            </label>
+        </div>
     </aside>
 
-    <!-- MAIN WRAPPER -->
     <div class="main-wrapper">
         
-        <!-- TOP BAR -->
         <div class="top-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem;">
             <div style="display: flex; align-items: center; gap: 1rem;">
                 <label for="sidebar-toggle" class="menu-toggle-label" title="Toggle Navigation">
@@ -55,7 +65,6 @@
             SENIOR HIGH SCHOOL • CATEGORIZED SOFTWARE & MOBILE APPS HUB
         </div>
 
-        <!-- MAIN CONTENT CONTAINER -->
         <div class="container">
             
             <div class="title-divider-container">
@@ -69,7 +78,6 @@
                 Select a category on the right to view the recommended software on the left.
             </p>
 
-            <!-- PURE CSS WRAPPER -->
             <div>
                 <input type="radio" name="tool-category" id="cat-default" checked class="tool-radio">
                 <input type="radio" name="tool-category" id="cat-pc" class="tool-radio">
@@ -77,10 +85,8 @@
 
                 <div class="tools-layout">
                     
-                    <!-- LEFT: Software Tools / Recommendation Panels -->
                     <div class="tools-content-display">
                         
-                        <!-- 0. DEFAULT WELCOME PROMPT PANEL -->
                         <div class="category-detail-panel" id="panel-default" style="text-align: center; padding: 3.5rem 2rem;">
                             <i class="fa-solid fa-hand-pointer" style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem; opacity: 0.8;"></i>
                             <h2 style="margin-bottom: 0.5rem; font-size: 1.3rem;">Welcome, Animation Student!</h2>
@@ -89,13 +95,11 @@
                             </p>
                         </div>
 
-                        <!-- 1. PC / LAPTOP CONTENT PANEL -->
                         <div class="category-detail-panel" id="panel-pc">
                             <span class="lesson-tag">Category: PC / Laptop</span>
                             <h2>Recommended PC & Laptop Software</h2>
                             <p class="lesson-subtitle" style="margin-bottom: 1.5rem;">Essential tools for laboratory production and in-depth animation projects.</p>
                             
-                            <!-- Sub-tool 1 -->
                             <div class="sub-tool-card">
                                 <div class="sub-tool-info">
                                     <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-pen-nib"></i> Krita / FireAlpaca</h3>
@@ -105,7 +109,6 @@
                                 <a href="https://krita.org" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
 
-                            <!-- Sub-tool 2 -->
                             <div class="sub-tool-card">
                                 <div class="sub-tool-info">
                                     <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-cube"></i> Blender</h3>
@@ -115,17 +118,15 @@
                                 <a href="https://www.blender.org" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
 
-                            <!-- Sub-tool 3 -->
                             <div class="sub-tool-card">
                                 <div class="sub-tool-info">
-                                    <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-vector-square"></i> Inkscape / Illustrator</h3>
+                                   <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-square"></i> Inkscape / Illustrator</h3>
                                     <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.4rem;">Type: Vector Graphics Editor</p>
                                     <p style="font-size: 0.85rem;">Used for creating high-quality, scalable character assets and background layouts.</p>
                                 </div>
                                 <a href="https://inkscape.org" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
 
-                            <!-- Sub-tool 4 -->
                             <div class="sub-tool-card">
                                 <div class="sub-tool-info">
                                     <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-clapperboard"></i> Adobe Animate</h3>
@@ -136,13 +137,11 @@
                             </div>
                         </div>
 
-                        <!-- 2. MOBILE / CELLPHONE CONTENT PANEL -->
                         <div class="category-detail-panel" id="panel-mobile">
                             <span class="lesson-tag">Category: Mobile / Cellphone</span>
                             <h2>Recommended Mobile Animation Apps</h2>
                             <p class="lesson-subtitle" style="margin-bottom: 1.5rem;">Recommended applications for smartphones and tablets.</p>
                             
-                            <!-- Sub-tool 1 -->
                             <div class="sub-tool-card">
                                 <div class="sub-tool-info">
                                     <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-film"></i> FlipaClip</h3>
@@ -152,7 +151,6 @@
                                 <a href="https://flipaclip.com" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
 
-                            <!-- Sub-tool 2 -->
                             <div class="sub-tool-card">
                                 <div class="sub-tool-info">
                                     <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-wand-magic-sparkles"></i> Alight Motion</h3>
@@ -162,7 +160,6 @@
                                 <a href="https://alightcreative.com/motion" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
 
-                            <!-- Sub-tool 3 -->
                             <div class="sub-tool-card">
                                 <div class="sub-tool-info">
                                     <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-pencil"></i> RoughAnimator</h3>
@@ -172,7 +169,6 @@
                                 <a href="https://roughanimator.com" target="_blank" class="tool-action-btn">Visit Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
 
-                            <!-- Sub-tool 4 -->
                             <div class="sub-tool-card">
                                 <div class="sub-tool-info">
                                     <h3 style="color: var(--secondary); margin-bottom: 0.25rem;"><i class="fa-solid fa-paintbrush"></i> Ibis Paint X</h3>
@@ -185,13 +181,12 @@
 
                     </div>
 
-                    <!-- RIGHT: Category Buttons Sidebar -->
                     <div class="tools-sidebar">
                         <label for="cat-pc" class="category-label" id="label-pc">
                             <i class="fa-solid fa-laptop" style="font-size: 1.8rem; color: var(--secondary);"></i>
                             <div>
                                 <div style="font-weight: 600; font-size: 1.1rem;">PC / Laptop Software</div>
-                                <div style="font-size: 0.85rem; color: var(--text-muted);">For Laboratories & Pro Production</div>
+                                <div style="font-size: 0.85rem;">For Laboratories & Pro Production</div>
                             </div>
                         </label>
 
@@ -199,7 +194,7 @@
                             <i class="fa-solid fa-mobile-screen-button" style="font-size: 1.8rem; color: var(--secondary);"></i>
                             <div>
                                 <div style="font-weight: 600; font-size: 1.1rem;">Mobile / Cellphone Apps</div>
-                                <div style="font-size: 0.85rem; color: var(--text-muted);">For Portable & On-The-Go Animation</div>
+                                <div style="font-size: 0.85rem;">For Portable & On-The-Go Animation</div>
                             </div>
                         </label>
                     </div>
@@ -209,12 +204,13 @@
 
         </div>
 
-        <!-- FOOTER -->
         <footer>
             <p><strong>Solaris Ed - Senior High School Animation Learning Portal</strong></p>
             <p>Educational Purpose Only | Independent Student Project &copy; 2026</p>
         </footer>
 
     </div>
+
+   <script src="js/theme_mode.js"></script>
 </body>
 </html>
